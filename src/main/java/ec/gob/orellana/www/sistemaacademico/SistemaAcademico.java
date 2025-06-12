@@ -3,6 +3,7 @@
  */
 
 package ec.gob.orellana.www.sistemaacademico;
+import ec.gob.orellana.www.sistemaacademico.clases.personasservicios.PersonalServicios;
 import ec.gob.orellana.www.sistemaacademico.clases.decanos.Decano;
 import ec.gob.orellana.www.sistemaacademico.clases.personasexternas.PersonaInvitada;
 import ec.gob.orellana.www.sistemaacademico.clases.profesores.Escalafon;

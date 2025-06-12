@@ -2,18 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package ec.gob.orellana.www.sistemaacademico.clases.decanos;
+package ec.gob.orellana.www.sistemaacademico.clases.personasservicios;
 
 /**
  *
- * @author SO-LAB-PC6
+ * @author Admin
  */
-public class Decanos {
-    public String AgregarPersona(){
+public class PersonasServicios {
+ 
+     public String agregarPersonalServicio(){
         return "";
     }
-    
-    public boolean VerificarCedula(){
-        return true;
+    public boolean verificarCedula (){
+        return true; 
     }
 }
