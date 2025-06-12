@@ -1,4 +1,4 @@
-package ec.gob.orellana.www.sistemaacademico.clases.estudiantes;
+package ec.gob.orellana.www.sistemaacademico.estudiantes;
 
 public interface IEstudiantes {
 

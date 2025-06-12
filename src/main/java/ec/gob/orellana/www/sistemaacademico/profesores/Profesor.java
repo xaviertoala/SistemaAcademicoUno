@@ -1,5 +1,5 @@
 
-package ec.gob.orellana.www.sistemaacademico.clases.profesores;
+package ec.gob.orellana.www.sistemaacademico.profesores;
 
 import ec.gob.orellana.www.sistemaacademico.clases.PersonalAcademico;
 

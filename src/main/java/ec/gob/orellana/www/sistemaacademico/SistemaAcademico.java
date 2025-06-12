@@ -3,12 +3,12 @@
  */
 
 package ec.gob.orellana.www.sistemaacademico;
-import ec.gob.orellana.www.sistemaacademico.clases.estudiantes.Estudiante;
-import ec.gob.orellana.www.sistemaacademico.clases.personasservicios.PersonalServicios;
-import ec.gob.orellana.www.sistemaacademico.clases.decanos.Decano;
-import ec.gob.orellana.www.sistemaacademico.clases.personasexternas.PersonaInvitada;
-import ec.gob.orellana.www.sistemaacademico.clases.profesores.Escalafon;
-import ec.gob.orellana.www.sistemaacademico.clases.profesores.Profesor;
+import ec.gob.orellana.www.sistemaacademico.estudiantes.Estudiante;
+import ec.gob.orellana.www.sistemaacademico.personasservicios.PersonalServicios;
+import ec.gob.orellana.www.sistemaacademico.decanos.Decano;
+import ec.gob.orellana.www.sistemaacademico.personasexternas.PersonaInvitada;
+import ec.gob.orellana.www.sistemaacademico.profesores.Escalafon;
+import ec.gob.orellana.www.sistemaacademico.profesores.Profesor;
 import ec.gob.orellana.www.sistemaacademico.clases.*;
 
 public class SistemaAcademico {

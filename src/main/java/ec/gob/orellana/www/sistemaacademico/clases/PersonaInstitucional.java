@@ -4,7 +4,7 @@
  */
 package ec.gob.orellana.www.sistemaacademico.clases;
 
-import ec.gob.orellana.www.sistemaacademico.clases.personas.Persona;
+import ec.gob.orellana.www.sistemaacademico.personas.Persona;
 
 
 public  class PersonaInstitucional extends Persona{
