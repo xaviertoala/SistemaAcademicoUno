@@ -1,4 +1,4 @@
-package ec.gob.orellana.www.sistemaacademico.estudiantes;
+package ec.gob.orellana.www.sistemaacademico.clases.estudiantes;
 
 public class Estudiantes {
 
