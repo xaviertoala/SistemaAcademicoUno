@@ -10,13 +10,20 @@ import ec.gob.orellana.www.sistemaacademico.personasexternas.PersonaInvitada;
 import ec.gob.orellana.www.sistemaacademico.profesores.Escalafon;
 import ec.gob.orellana.www.sistemaacademico.profesores.Profesor;
 import ec.gob.orellana.www.sistemaacademico.clases.*;
+import ec.gob.orellana.www.sistemaacademico.profesores.IProfesores;
+import ec.gob.orellana.www.sistemaacademico.profesores.Profesores;
 
 public class SistemaAcademico {
 
     public static void main(String[] args) {
         
     
+        Profesor [] profesor = new Profesor[1];
+        profesor[0] = new Profesor(Escalafon.PRINCIPAL, 3465, "Juan@espoch.edu.ec", "Juan", 5, "juan@gmail.com", "2200478341");
         
+        IProfesores objProfesores  = new Profesores();
+        objProfesores.imprimirDatos(profesor);
+        /*
         System.out.println("\nDatos de la persona invitada");
         PersonaInvitada personaInvitada = new PersonaInvitada("Castillo Juan",3,"Juan@gmail.com","254864563","Visita tecnica");
         System.out.println("Datos"+personaInvitada.toString());
@@ -37,5 +44,6 @@ public class SistemaAcademico {
         System.out.println("\n Datos del Profesor: ");
         Profesor profesores = new Profesor(Escalafon.PRINCIPAL, 800,"profejulio@espoch", "Julio", 2021, "julio10@gmail", "22500060");
         System.out.println("Datos: "+profesores.toString());
+        */
     }
 }

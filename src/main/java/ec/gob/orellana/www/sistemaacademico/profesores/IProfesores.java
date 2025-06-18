@@ -10,5 +10,5 @@ package ec.gob.orellana.www.sistemaacademico.profesores;
  */
 public interface IProfesores {
     public String agregarProfesor ();
-    public boolean verificarCedula ();
+    public void imprimirDatos(Profesor [] profesor);
 }

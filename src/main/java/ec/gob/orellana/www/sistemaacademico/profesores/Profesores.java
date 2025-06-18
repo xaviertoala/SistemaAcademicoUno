@@ -4,15 +4,13 @@
  */
 package ec.gob.orellana.www.sistemaacademico.profesores;
 
-/**
- *
- * @author SO-LAB-PC6
- */
-public class Profesores {
+
+public class Profesores implements IProfesores {
      public String agregarProfesor (){
          return "";
      }
-    public boolean verificarCedula (){
-        return true;
+    public void imprimirDatos (Profesor [] profesor){
+        for(int i =0; i < profesor.length;i++)
+        System.out.println("Datos del profesor :" + profesor[i].toString());
     }
 }
