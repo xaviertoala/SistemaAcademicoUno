@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package ec.gob.orellana.www.sistemaacademico.personasexternas;
 
 import ec.gob.orellana.www.sistemaacademico.personas.Persona;
@@ -23,15 +20,9 @@ public class PersonaInvitada extends Persona {
         this.descripcion = descripcion;
     }
     
-    
-    
     //Metodos
     @Override
     public String toString() {
         return "Persona Invitada {" + super.toString()+ '}';
-    }
-    
-    public boolean verificarCedula (){
-        return true;
-    }
+    }   
 }

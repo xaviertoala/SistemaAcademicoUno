@@ -1,19 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package ec.gob.orellana.www.sistemaacademico.personasservicios;
 
-/**
- *
- * @author Admin
- */
-public class PersonasServicios {
+
+public class PersonasServicios implements IPersonasServicios{
  
      public String agregarPersonalServicio(){
         return "";
     }
-    public boolean verificarCedula (){
-        return true; 
+        public void imprimirDatos (PersonalServicios [] personalServicios){
+        for(int i =0; i < personalServicios.length;i++)
+        System.out.println("Datos de la persona en servicio :" + personalServicios[i].toString());
     }
 }

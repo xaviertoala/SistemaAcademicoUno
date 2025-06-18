@@ -1,18 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package ec.gob.orellana.www.sistemaacademico.personasexternas;
 
-/**
- *
- * @author SO-LAB-PC6
- */
-public class PersonasInvitadas {
+
+public class PersonasInvitadas implements IPersonasInvitadas {
     public String agregarpersonaInvitada(){
         return "";
     }
-    public boolean verificarCedula (){
-        return true;
+    
+    public void imprimirDatos (PersonaInvitada[]personasInvitadas){
+        for (int i = 0; i < personasInvitadas.length; i++) {
+            System.out.println("Datos de la persona invitada : " + personasInvitadas[i].toString());
+        }
     }
 }
