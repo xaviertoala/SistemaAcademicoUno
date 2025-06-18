@@ -10,6 +10,10 @@ import ec.gob.orellana.www.sistemaacademico.personasexternas.PersonaInvitada;
 import ec.gob.orellana.www.sistemaacademico.profesores.Escalafon;
 import ec.gob.orellana.www.sistemaacademico.profesores.Profesor;
 import ec.gob.orellana.www.sistemaacademico.clases.*;
+import ec.gob.orellana.www.sistemaacademico.decanos.Decanos;
+import ec.gob.orellana.www.sistemaacademico.decanos.IDecanos;
+import ec.gob.orellana.www.sistemaacademico.estudiantes.Estudiantes;
+import ec.gob.orellana.www.sistemaacademico.estudiantes.IEstudiantes;
 import ec.gob.orellana.www.sistemaacademico.personasexternas.IPersonasInvitadas;
 import ec.gob.orellana.www.sistemaacademico.personasexternas.PersonasInvitadas;
 import ec.gob.orellana.www.sistemaacademico.personasservicios.IPersonasServicios;
@@ -39,6 +43,20 @@ public class SistemaAcademico {
        
         IPersonasServicios objPersonaS  = new PersonasServicios();
         objPersonaS.imprimirDatos(personalServicios);
+        
+        Decano [] decano = new Decano [1];
+        decano [0] = new Decano ("Gestion de personal", 3000, "xavier@espoch.edu.ec", "Xavier", 10, "xaviertoala@gmail", "22500");
+        
+        IDecanos objDecano = new Decanos ();
+        objDecano.imprimirDatos(decano);
+        
+        Estudiante [] estudiante = new Estudiante [1];
+        estudiante [0] = new Estudiante (22, "Josue.espoch", "Josue", 3232, "Josue.gmail", "2254021");
+        
+        IEstudiantes objEstudiante = new Estudiantes ();
+        objEstudiante.imprimirDato(estudiante);
+        
+        
         /*
         System.out.println("\nDatos de la persona invitada");
         PersonaInvitada personaInvitada = new PersonaInvitada("Castillo Juan",3,"Juan@gmail.com","254864563","Visita tecnica");

@@ -10,5 +10,5 @@ package ec.gob.orellana.www.sistemaacademico.decanos;
  */
 public interface IDecanos {
     public String AgregarDecano();
-    public boolean VerificarCedula();
+    public void imprimirDatos (Decano [] decano);
 }

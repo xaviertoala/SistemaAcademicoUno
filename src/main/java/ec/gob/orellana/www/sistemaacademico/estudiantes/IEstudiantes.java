@@ -4,5 +4,5 @@ public interface IEstudiantes {
 
     public String agregarEstudiante();
 
-    public boolean verificarCedula();
+    public void imprimirDato (Estudiante [] estudiante);
 }

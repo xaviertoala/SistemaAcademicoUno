@@ -23,7 +23,9 @@ public class Estudiante extends PersonaInstitucional{
 
     @Override
     public String toString() {
-        return "Estudiante{" + "codigo=" + codigo + '}';
+        return "Estudiante{" + "codigo=" + codigo + super.toString() + '}';
     }
+
+    
     
 }

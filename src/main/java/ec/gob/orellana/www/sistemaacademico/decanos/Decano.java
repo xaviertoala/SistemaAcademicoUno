@@ -24,9 +24,6 @@ public class Decano extends PersonalAcademico {
         this.nivelJerarquico = nivelJerarquico;
     }
  
-    public boolean verificarCedula (){
-        return true; 
-    }
 
     @Override
     public String toString() {

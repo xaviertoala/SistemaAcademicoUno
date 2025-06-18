@@ -8,12 +8,15 @@ package ec.gob.orellana.www.sistemaacademico.decanos;
  *
  * @author SO-LAB-PC6
  */
-public class Decanos {
-    public String AgregarPersona(){
+public class Decanos implements IDecanos {
+    public String AgregarDecano(){
         return "";
     }
-    
-    public boolean VerificarCedula(){
-        return true;
+    public void imprimirDatos (Decano [] decano){
+        for (int i =0; i < decano.length; i++){
+        System.out.println("Datos decano: "+ decano[i].toString());
+        }
     }
+    
+ 
 }
