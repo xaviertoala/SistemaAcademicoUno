@@ -26,6 +26,9 @@ public class SistemaAcademico {
     public static void main(String[] args) {
         
     
+        
+        
+        
         Profesor [] profesor = new Profesor[1];
         profesor[0] = new Profesor(Escalafon.PRINCIPAL, 3465, "Juan@espoch.edu.ec", "Juan", 5, "juan@gmail.com", "2200478341");
         
@@ -56,8 +59,8 @@ public class SistemaAcademico {
         IEstudiantes objEstudiante = new Estudiantes ();
         objEstudiante.imprimirDato(estudiante);
         
-        
         /*
+        
         System.out.println("\nDatos de la persona invitada");
         PersonaInvitada personaInvitada = new PersonaInvitada("Castillo Juan",3,"Juan@gmail.com","254864563","Visita tecnica");
         System.out.println("Datos"+personaInvitada.toString());
