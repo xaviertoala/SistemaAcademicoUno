@@ -25,9 +25,10 @@ public class SistemaAcademico {
 
     public static void main(String[] args) {
         
+
         //CLASE PROFESOR
         IProfesores objProfesor = new Profesores(3);
-        
+     
         Profesor profesorUno = new Profesor(Escalafon.AUXILIAR, 2345,"Juan@espoch.edu.ec", "Juan",2, "juan@espoch.edu.ec", "220046735");
         Profesor profesorDos = new Profesor(Escalafon.AUXILIAR, 2756,"Alex@espoch.edu.ec", "Alex",5, "alex@espoch.edu.ec", "228872628");
         
@@ -77,9 +78,8 @@ public class SistemaAcademico {
         objEstudiante.agregarEstudiantes(estudianteTres);
         objEstudiante.imprimirDato(); //Impresion estudiantes
         
+             /*
         
-        
-        /*
         System.out.println("\nDatos de la persona invitada");
         PersonaInvitada personaInvitada = new PersonaInvitada("Castillo Juan",3,"Juan@gmail.com","254864563","Visita tecnica");
         System.out.println("Datos"+personaInvitada.toString());
