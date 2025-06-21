@@ -9,6 +9,6 @@ package ec.gob.orellana.www.sistemaacademico.profesores;
  * @author SO-LAB-PC6
  */
 public interface IProfesores {
-    public String agregarProfesor ();
-    public void imprimirDatos(Profesor [] profesor);
+    public boolean agregarProfesor(Profesor profesores);
+    public void imprimirDatos();
 }

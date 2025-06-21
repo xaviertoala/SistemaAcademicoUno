@@ -6,6 +6,7 @@ import ec.gob.orellana.www.sistemaacademico.clases.PersonalAcademico;
 
 public class Profesor extends PersonalAcademico{
     private Escalafon escalafon; 
+    
 
     public Profesor(Escalafon escalafon, double sueldo, String correoInstitucional, String nombre, int id, String correo, String cedula) {
         super(sueldo, correoInstitucional, nombre, id, correo, cedula);

@@ -25,31 +25,43 @@ public class SistemaAcademico {
 
     public static void main(String[] args) {
         
-    
-        Profesor [] profesor = new Profesor[1];
-        profesor[0] = new Profesor(Escalafon.PRINCIPAL, 3465, "Juan@espoch.edu.ec", "Juan", 5, "juan@gmail.com", "2200478341");
+        //CLASE PROFESOR
+        IProfesores objProfesor = new Profesores(3);
         
-        IProfesores objProfesores  = new Profesores();
-        objProfesores.imprimirDatos(profesor);
+        Profesor profesorUno = new Profesor(Escalafon.AUXILIAR, 2345,"Juan@espoch.edu.ec", "Juan",2, "juan@espoch.edu.ec", "220046735");
+        Profesor profesorDos = new Profesor(Escalafon.AUXILIAR, 2756,"Alex@espoch.edu.ec", "Alex",5, "alex@espoch.edu.ec", "228872628");
         
+        Profesor agregoProfesor = new Profesor(Escalafon.PRINCIPAL, 2345, "Josue@espoch.edu.ec", "Josue", 5, "josue@gmail.com", "22546738");
+        
+        objProfesor.agregarProfesor(profesorUno);
+        objProfesor.agregarProfesor(profesorDos);
+        objProfesor.agregarProfesor(agregoProfesor);
+        objProfesor.imprimirDatos();
+        //IProfesores objProfesores  = new Profesores();
+        //objProfesores.imprimirDatos(profesor);
+        
+        //CLASE PERSONA INVITADA
         PersonaInvitada [] personasInvitadas = new PersonaInvitada[1];
         personasInvitadas[0] = new PersonaInvitada("Alexis", 35 , "juan@gmail.com","2250180862" , "Expositor");
        
         IPersonasInvitadas objPersonaInvitada  = new PersonasInvitadas();
         objPersonaInvitada.imprimirDatos(personasInvitadas);
         
+        //CLASE PERSONA DE SERVICIO
         PersonalServicios [] personalServicios = new PersonalServicios[1];
         personalServicios[0] = new PersonalServicios(" Espoch ", 500.0 , "Celeste.v@espoch.com", "Celeste" , 36, "Celeste@gmail.com", "2250180862");
        
         IPersonasServicios objPersonaS  = new PersonasServicios();
         objPersonaS.imprimirDatos(personalServicios);
         
+        //CLASE DECANO
         Decano [] decano = new Decano [1];
         decano [0] = new Decano ("Gestion de personal", 3000, "xavier@espoch.edu.ec", "Xavier", 10, "xaviertoala@gmail", "22500");
         
         IDecanos objDecano = new Decanos ();
         objDecano.imprimirDatos(decano);
         
+        //CLASE ESTUDIANTE
         Estudiante [] estudiante = new Estudiante [1];
         estudiante [0] = new Estudiante (22, "Josue.espoch", "Josue", 3232, "Josue.gmail", "2254021");
         

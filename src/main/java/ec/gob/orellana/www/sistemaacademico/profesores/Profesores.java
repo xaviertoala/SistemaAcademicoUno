@@ -1,16 +1,28 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package ec.gob.orellana.www.sistemaacademico.profesores;
 
-
 public class Profesores implements IProfesores {
-     public String agregarProfesor (){
-         return "";
-     }
-    public void imprimirDatos (Profesor [] profesor){
-        for(int i =0; i < profesor.length;i++)
-        System.out.println("Datos del profesor :" + profesor[i].toString());
+    
+    private Profesor [] profesores;
+    int totalProfesores;
+
+    public Profesores(int dimension) {
+        profesores = new Profesor[dimension];
+        totalProfesores = 0;
+    }
+    
+     public boolean agregarProfesor (Profesor profesoress){
+         if(totalProfesores == profesores.length){
+             return false;     
+        }else{
+            profesores[totalProfesores] = profesoress;
+            totalProfesores += +1 ;
+            return true;    
+        }        
+    }
+    public void imprimirDatos (){
+        for(int i =0; i < totalProfesores;i++)
+        System.out.println("Datos del profesor :" + profesores[i].getEscalafon());
+        
     }
 }
