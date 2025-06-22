@@ -41,20 +41,39 @@ public class SistemaAcademico {
         //objProfesores.imprimirDatos(profesor);
         
         //CLASE PERSONA INVITADA
-        PersonaInvitada [] personasInvitadas = new PersonaInvitada[1];
-        personasInvitadas[0] = new PersonaInvitada("Alexis", 35 , "juan@gmail.com","2250180862" , "Expositor");
-       
-        IPersonasInvitadas objPersonaInvitada  = new PersonasInvitadas();
-        objPersonaInvitada.imprimirDatos(personasInvitadas);
+        System.out.println("---PERSONA INVITADA---");
+        IPersonasInvitadas objPersonaInvitada  = new PersonasInvitadas(2); 
+        
+        PersonaInvitada PersonaUno = new PersonaInvitada("Alexis", 5380, " alexisyasacama@gmail.com ", "2250180862", "Estudiante de la ESPOCH");
+        PersonaInvitada PersonaDos = new PersonaInvitada("Xavier", 5381, " xavier@gmail.com ", " 2218603578 ", "Profesor de la ESPOCH");
+        
+        PersonaInvitada pModificada = new PersonaInvitada("Alexis", 5380, " alexis.vargas@gmail.com", "2250180862", "Estudiante de la Sede Orellana");
+        
+        objPersonaInvitada.agregarpersonaInvitada(PersonaUno);
+        objPersonaInvitada.agregarpersonaInvitada(PersonaDos);
+        objPersonaInvitada.imprimirDatos();
+        System.out.println("---DATOS MODIFICADOS---");
+        objPersonaInvitada.actualizarPersonaInvitada(1, pModificada);
+        objPersonaInvitada.imprimirDatos();
         
         //CLASE PERSONA DE SERVICIO
-        PersonalServicios [] personalServicios = new PersonalServicios[1];
-        personalServicios[0] = new PersonalServicios(" Espoch ", 500.0 , "Celeste.v@espoch.com", "Celeste" , 36, "Celeste@gmail.com", "2250180862");
-       
-        IPersonasServicios objPersonaS  = new PersonasServicios();
-        objPersonaS.imprimirDatos(personalServicios);
+        System.out.println("---PERSONAL DE SERVICIO---");
+        IPersonasServicios objPServicios = new PersonasServicios(2);
+        
+        PersonalServicios PUno = new PersonalServicios("ESPOCH SEDE ORELLANA", 458.0, "MAURICIO@GMAIL.COM", "Mauricio", 2580, "M@gmail.com", "2265801472");
+        PersonalServicios PDos = new PersonalServicios("MATRIZ EN RIOBAMBA", 458.0, "MAURICIO@GMAIL.COM", "Mauricio", 2580, "M@gmail.com", "2265801472");
+        
+        PersonalServicios sModificada = new PersonalServicios("NUEVA SEDE EN GUAYAQUIL", 458.0, "MAURICIO@GMAIL.COM", "Mauricio", 2580, "M@gmail.com", "2265801472");
+        
+        objPServicios.agregarPersonalServicio(PUno);
+        objPServicios.agregarPersonalServicio(PDos);
+        objPServicios.imprimirDatos();
+        System.out.println("---DATOS MODIFICADOS---");
+        objPServicios.actualizarPersonalServicio(1, sModificada);
+        objPServicios.imprimirDatos();
         
         //CLASE DECANO
+        System.out.println("-----");
         Decano [] decano = new Decano [1];
         decano [0] = new Decano ("Gestion de personal", 3000, "xavier@espoch.edu.ec", "Xavier", 10, "xaviertoala@gmail", "22500");
         

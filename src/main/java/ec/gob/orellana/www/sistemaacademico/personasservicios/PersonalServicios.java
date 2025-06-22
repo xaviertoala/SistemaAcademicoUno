@@ -5,6 +5,7 @@ import ec.gob.orellana.www.sistemaacademico.clases.Empleado;
 
 
 public class PersonalServicios extends Empleado{
+    
     private String gremio;
 
     public PersonalServicios(String gremio, double sueldo, String correoInstitucional, String nombre, int id, String correo, String cedula) {
