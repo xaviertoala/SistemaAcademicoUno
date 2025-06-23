@@ -9,12 +9,29 @@ package ec.gob.orellana.www.sistemaacademico.decanos;
  * @author SO-LAB-PC6
  */
 public class Decanos implements IDecanos {
-    public String AgregarDecano(){
-        return "";
+    private Decano [] decanos; 
+    private int totalDecanos; 
+
+    public Decanos(int dimension) {
+        decanos = new Decano [dimension];
+        totalDecanos= 0; 
     }
-    public void imprimirDatos (Decano [] decano){
-        for (int i =0; i < decano.length; i++){
-        System.out.println("Datos decano: "+ decano[i].toString());
+    
+    public boolean AgregarDecanos (Decano decano){
+        if (totalDecanos == decanos.length){
+            return false; 
+        }   else {
+            decanos [totalDecanos] = decano; 
+            totalDecanos = totalDecanos +1; 
+            return true ;
+        }
+    }
+    
+    public void imprimirDatos (){
+        for (int i =0; i < totalDecanos; i++){ 
+            System.out.println("------DECANO------"+(i+1));
+            System.out.println("Datos decano: "+ decanos[i].toString());
+        
         }
     }
     

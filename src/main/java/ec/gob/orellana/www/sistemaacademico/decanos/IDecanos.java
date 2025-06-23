@@ -9,6 +9,6 @@ package ec.gob.orellana.www.sistemaacademico.decanos;
  * @author SO-LAB-PC6
  */
 public interface IDecanos {
-    public String AgregarDecano();
-    public void imprimirDatos (Decano [] decano);
+    public boolean AgregarDecanos(Decano decano);
+    public void imprimirDatos ();
 }

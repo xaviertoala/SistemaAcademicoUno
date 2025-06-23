@@ -73,19 +73,25 @@ public class SistemaAcademico {
         objPServicios.imprimirDatos();
         
         //CLASE DECANO
-        System.out.println("-----");
-        Decano [] decano = new Decano [1];
-        decano [0] = new Decano ("Gestion de personal", 3000, "xavier@espoch.edu.ec", "Xavier", 10, "xaviertoala@gmail", "22500");
+        IDecanos objDecano = new Decanos (2);
+        //Constructor datos Decano
+        Decano decanoUno = new Decano ("Intermedio-alto ", 3800, "Rene@espoch.edu", "Rene", 40, "Rene@outlook", "220054678");
+        Decano decanoDos = new Decano ("Intermedio-alto", 3800, "Higuita@espoch.edu", "Higuita", 50, "Higuita@outlook", "1010101010");
         
-        IDecanos objDecano = new Decanos ();
-        objDecano.imprimirDatos(decano);
-        
+        objDecano.AgregarDecanos(decanoUno);
+        objDecano.AgregarDecanos(decanoDos);
+        objDecano.imprimirDatos(); //Impresion decanos
         //CLASE ESTUDIANTE
-        Estudiante [] estudiante = new Estudiante [1];
-        estudiante [0] = new Estudiante (22, "Josue.espoch", "Josue", 3232, "Josue.gmail", "2254021");
-        
-        IEstudiantes objEstudiante = new Estudiantes ();
-        objEstudiante.imprimirDato(estudiante);
+        IEstudiantes objEstudiante = new Estudiantes (3);
+        //Constructur datos Estudiante
+        Estudiante estudianteUno = new Estudiante (022, "Xavier@espoch.edu", "Xavier", 69, "xaviertoala@hotmail", "6969696969");
+        Estudiante estudianteDos = new Estudiante (023, "Ander@espoch.edu", "Ander", 79, "anderayovi@hotmail", "2020202020");
+        Estudiante estudianteTres = new Estudiante (024, "Alexis@espoch.edu", "Alexis", 89, "alexisvargas@hotmail", "2121212121");
+
+        objEstudiante.agregarEstudiantes(estudianteUno);
+        objEstudiante.agregarEstudiantes(estudianteDos);
+        objEstudiante.agregarEstudiantes(estudianteTres);
+        objEstudiante.imprimirDato(); //Impresion estudiantes
         
         
         /*
