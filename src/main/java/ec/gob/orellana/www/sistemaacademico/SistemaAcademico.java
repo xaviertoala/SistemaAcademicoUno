@@ -25,9 +25,10 @@ public class SistemaAcademico {
 
     public static void main(String[] args) {
         
+
         //CLASE PROFESOR
         IProfesores objProfesor = new Profesores(3);
-        
+     
         Profesor profesorUno = new Profesor(Escalafon.AUXILIAR, 2345,"Juan@espoch.edu.ec", "Juan",2, "juan@espoch.edu.ec", "220046735");
         Profesor profesorDos = new Profesor(Escalafon.AUXILIAR, 2756,"Alex@espoch.edu.ec", "Alex",5, "alex@espoch.edu.ec", "228872628");
         
@@ -77,10 +78,12 @@ public class SistemaAcademico {
         //Constructor datos Decano
         Decano decanoUno = new Decano ("Intermedio-alto ", 3800, "Rene@espoch.edu", "Rene", 40, "Rene@outlook", "220054678");
         Decano decanoDos = new Decano ("Intermedio-alto", 3800, "Higuita@espoch.edu", "Higuita", 50, "Higuita@outlook", "1010101010");
-        
+
         objDecano.AgregarDecanos(decanoUno);
         objDecano.AgregarDecanos(decanoDos);
         objDecano.imprimirDatos(); //Impresion decanos
+        
+        
         //CLASE ESTUDIANTE
         IEstudiantes objEstudiante = new Estudiantes (3);
         //Constructur datos Estudiante
@@ -93,28 +96,5 @@ public class SistemaAcademico {
         objEstudiante.agregarEstudiantes(estudianteTres);
         objEstudiante.imprimirDato(); //Impresion estudiantes
         
-        
-        /*
-        System.out.println("\nDatos de la persona invitada");
-        PersonaInvitada personaInvitada = new PersonaInvitada("Castillo Juan",3,"Juan@gmail.com","254864563","Visita tecnica");
-        System.out.println("Datos"+personaInvitada.toString());
-        
-    
-        System.out.println("\nDatos del estudiante");
-        Estudiante estudiante = new Estudiante(2,"Pedro@espoch.edu.ec","Pedro",6,"pedro@gmail.com","758647687");
-        System.out.println("Datos "+estudiante.toString());
-        
-        System.out.println("\nDatos del personal de servicio");
-        PersonalServicios personalServicios = new PersonalServicios("Espoch Sede Orellana",8,"Josue@espoch.edu.ec","Josue",8,"Josue@gmail.com","9845623567");
-        System.out.println("Datos "+personalServicios.toString());
-        
-        System.out.println("\n Datos del Decano");
-        Decano decanos = new Decano ("01", 3000, "xaviertoala@espoch.edu.ec", "Xavier", 10, "xaviertoala10@gmail", "225002588");
-        System.out.println("Datos: "+decanos.toString());
-
-        System.out.println("\n Datos del Profesor: ");
-        Profesor profesores = new Profesor(Escalafon.PRINCIPAL, 800,"profejulio@espoch", "Julio", 2021, "julio10@gmail", "22500060");
-        System.out.println("Datos: "+profesores.toString());
-        */
     }
 }

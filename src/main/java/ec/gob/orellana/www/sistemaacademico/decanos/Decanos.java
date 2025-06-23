@@ -9,12 +9,14 @@ package ec.gob.orellana.www.sistemaacademico.decanos;
  * @author SO-LAB-PC6
  */
 public class Decanos implements IDecanos {
+
     private Decano [] decanos; 
     private int totalDecanos; 
 
     public Decanos(int dimension) {
         decanos = new Decano [dimension];
         totalDecanos= 0; 
+
     }
     
     public boolean AgregarDecanos (Decano decano){
@@ -34,6 +36,7 @@ public class Decanos implements IDecanos {
         
         }
     }
+
     
  
 }
