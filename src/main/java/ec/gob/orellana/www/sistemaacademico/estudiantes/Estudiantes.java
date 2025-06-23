@@ -22,7 +22,7 @@ public class Estudiantes implements IEstudiantes {
     }
     public void imprimirDato (){
         for (int i =0; i< totalEstudiantes; i++){
-            System.out.println("------Estudiante------"+ (i+1));
+            System.out.println("------Estudiante------"+"|"+(i+1)+"|");
             System.out.println("Datos del Estudiante: "+ estudiantes[i].toString());
         }
     }

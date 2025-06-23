@@ -31,12 +31,11 @@ public class Decanos implements IDecanos {
     
     public void imprimirDatos (){
         for (int i =0; i < totalDecanos; i++){ 
-            System.out.println("------DECANO------"+(i+1));
+            System.out.println("------DECANO------"+"|"+(i+1)+"|");
             System.out.println("Datos decano: "+ decanos[i].toString());
         
         }
     }
 
-    
  
 }
