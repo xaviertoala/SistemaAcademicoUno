@@ -11,4 +11,6 @@ package ec.gob.orellana.www.sistemaacademico.decanos;
 public interface IDecanos {
     public boolean AgregarDecanos(Decano decano);
     public void imprimirDatos ();
+    public boolean actualizarDecano (int i, Decano decano);
+    public boolean eliminarDecano (int i, Decano decano);
 }

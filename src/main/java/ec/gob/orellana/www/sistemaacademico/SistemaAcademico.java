@@ -25,22 +25,6 @@ public class SistemaAcademico {
 
     public static void main(String[] args) {
         
-
-        //CLASE PROFESOR
-        IProfesores objProfesor = new Profesores(3);
-     
-        Profesor profesorUno = new Profesor(Escalafon.AUXILIAR, 2345,"Juan@espoch.edu.ec", "Juan",2, "juan@espoch.edu.ec", "220046735");
-        Profesor profesorDos = new Profesor(Escalafon.AUXILIAR, 2756,"Alex@espoch.edu.ec", "Alex",5, "alex@espoch.edu.ec", "228872628");
-        
-        Profesor agregoProfesor = new Profesor(Escalafon.PRINCIPAL, 2345, "Josue@espoch.edu.ec", "Josue", 5, "josue@gmail.com", "22546738");
-        
-        objProfesor.agregarProfesor(profesorUno);
-        objProfesor.agregarProfesor(profesorDos);
-        objProfesor.agregarProfesor(agregoProfesor);
-        objProfesor.imprimirDatos();
-        //IProfesores objProfesores  = new Profesores();
-        //objProfesores.imprimirDatos(profesor);
-        
         //CLASE PERSONA INVITADA
         System.out.println("---PERSONA INVITADA---");
         IPersonasInvitadas objPersonaInvitada  = new PersonasInvitadas(2); 
@@ -56,7 +40,29 @@ public class SistemaAcademico {
         System.out.println("---DATOS MODIFICADOS---");
         objPersonaInvitada.actualizarPersonaInvitada(1, pModificada);
         objPersonaInvitada.imprimirDatos();
+        System.out.println(" ");
+        //CLASE ESTUDIANTE
+        IEstudiantes objEstudiante = new Estudiantes (3);
+        //Constructur datos Estudiante
+        Estudiante estudianteUno = new Estudiante (022, "Xavier@espoch.edu", "Xavier", 69, "xaviertoala@hotmail", "6969696969");
+        Estudiante estudianteDos = new Estudiante (023, "Ander@espoch.edu", "Ander", 79, "anderayovi@hotmail", "2020202020");
+        Estudiante estudianteTres = new Estudiante (024, "Alexis@espoch.edu", "Alexis", 89, "alexisvargas@hotmail", "2121212121");
         
+        objEstudiante.agregarEstudiantes(estudianteUno);
+        objEstudiante.agregarEstudiantes(estudianteDos);
+        objEstudiante.agregarEstudiantes(estudianteTres);
+        objEstudiante.imprimirDato(); //Impresion estudiantes
+        System.out.println("------DATOS MODIFICADOS------");
+        //Metodo Actualizar estudiante
+        Estudiante Emodificado = new Estudiante (032, "Ander@espoch", "AnderAyovi", 79, "ander01@gmail", "22002200");
+        objEstudiante.actualizarEstudiante(1, Emodificado);
+        objEstudiante.imprimirDato();
+        System.out.println("------DATOS ELIMINADOS------");
+        //Metodo Eliminar estudiante
+        Estudiante EliminarE = new Estudiante (0, " ", " ", 0, " ", " ");
+        objEstudiante.eliminarEstudiante(2, EliminarE);
+        objEstudiante.imprimirDato();
+        System.out.println(" ");
         //CLASE PERSONA DE SERVICIO
         System.out.println("---PERSONAL DE SERVICIO---");
         IPersonasServicios objPServicios = new PersonasServicios(2);
@@ -72,7 +78,23 @@ public class SistemaAcademico {
         System.out.println("---DATOS MODIFICADOS---");
         objPServicios.actualizarPersonalServicio(1, sModificada);
         objPServicios.imprimirDatos();
+        System.out.println(" ");
+        //CLASE PROFESOR
+        System.out.println("---PROFESOR---");
+        IProfesores objProfesor = new Profesores(3);
+     
+        Profesor profesorUno = new Profesor(Escalafon.AUXILIAR, 2345,"Juan@espoch.edu.ec", "Juan",2, "juan@espoch.edu.ec", "220046735");
+        Profesor profesorDos = new Profesor(Escalafon.AUXILIAR, 2756,"Alex@espoch.edu.ec", "Alex",5, "alex@espoch.edu.ec", "228872628");
         
+        Profesor agregoProfesor = new Profesor(Escalafon.PRINCIPAL, 2345, "Josue@espoch.edu.ec", "Josue", 5, "josue@gmail.com", "22546738");
+        
+        objProfesor.agregarProfesor(profesorUno);
+        objProfesor.agregarProfesor(profesorDos);
+        objProfesor.agregarProfesor(agregoProfesor);
+        objProfesor.imprimirDatos();
+        //IProfesores objProfesores  = new Profesores();
+        //objProfesores.imprimirDatos(profesor);
+        System.out.println(" ");
         //CLASE DECANO
         IDecanos objDecano = new Decanos (2);
         //Constructor datos Decano
@@ -82,19 +104,19 @@ public class SistemaAcademico {
         objDecano.AgregarDecanos(decanoUno);
         objDecano.AgregarDecanos(decanoDos);
         objDecano.imprimirDatos(); //Impresion decanos
+        System.out.println("------DATOS MODIFICADOS------");
+        //Metodo Actualizar Decano 
+        Decano Edecano = new Decano ("Alto", 4000, "Rene@espoch", "ReneX", 41, "Rene@Gmail", "220044444");
+        objDecano.actualizarDecano(0, Edecano);
+        objDecano.imprimirDatos();
+        System.out.println("------DATOS ELIMINADOS------");
+        //Metodo Eliminar Decano 
+        Decano EliminarD = new Decano (" ", 0, " ", " ", 0, " ", " ");
+        objDecano.eliminarDecano(1, EliminarD);
+        objDecano.imprimirDatos();
         
         
-        //CLASE ESTUDIANTE
-        IEstudiantes objEstudiante = new Estudiantes (3);
-        //Constructur datos Estudiante
-        Estudiante estudianteUno = new Estudiante (022, "Xavier@espoch.edu", "Xavier", 69, "xaviertoala@hotmail", "6969696969");
-        Estudiante estudianteDos = new Estudiante (023, "Ander@espoch.edu", "Ander", 79, "anderayovi@hotmail", "2020202020");
-        Estudiante estudianteTres = new Estudiante (024, "Alexis@espoch.edu", "Alexis", 89, "alexisvargas@hotmail", "2121212121");
-
-        objEstudiante.agregarEstudiantes(estudianteUno);
-        objEstudiante.agregarEstudiantes(estudianteDos);
-        objEstudiante.agregarEstudiantes(estudianteTres);
-        objEstudiante.imprimirDato(); //Impresion estudiantes
+        
         
     }
 }

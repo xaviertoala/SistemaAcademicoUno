@@ -33,10 +33,19 @@ public class Decanos implements IDecanos {
     public void imprimirDatos (){
         for (int i =0; i < totalDecanos; i++){ 
             System.out.println("------DECANO------"+"|"+(i+1)+"|");
-            System.out.println("Datos decano: "+ decanos[i].toString());
+            System.out.println("Datos decano: "+ decanos[i].getNivelJerarquico());
         
         }
     }
-
- 
+    @Override
+    public boolean actualizarDecano (int i, Decano decano){
+        decanos [i] = decano;
+        return true; 
+    }
+    @Override
+    public boolean eliminarDecano (int i, Decano decano){
+        decanos [i] = decano; 
+        return true; 
+    }
+    
 }

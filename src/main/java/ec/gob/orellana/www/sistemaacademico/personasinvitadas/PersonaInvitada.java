@@ -22,6 +22,7 @@ public class PersonaInvitada extends Persona {
         this.descripcion = descripcion;
     }
     
+    
     //Metodos
     @Override
     public String toString() {

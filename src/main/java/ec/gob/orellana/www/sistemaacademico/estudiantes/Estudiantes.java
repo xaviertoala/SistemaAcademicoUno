@@ -11,6 +11,7 @@ public class Estudiantes implements IEstudiantes {
     }
     
     
+    @Override
     public boolean agregarEstudiantes (Estudiante estudiante){
         if (totalEstudiantes == estudiantes.length){
             return false;
@@ -20,11 +21,26 @@ public class Estudiantes implements IEstudiantes {
             return true;
         }     
     }
+    @Override
     public void imprimirDato (){
         for (int i =0; i< totalEstudiantes; i++){
             System.out.println("------Estudiante------"+"|"+(i+1)+"|");
-            System.out.println("Datos del Estudiante: "+ estudiantes[i].toString());
+            System.out.println("Datos del Estudiante: "+ estudiantes[i].getCodigo());
         }
     }
+        
+    @Override
+    public boolean eliminarEstudiante (int i, Estudiante estudiante){
+        estudiantes [i]= estudiante; 
+        return true; 
+    }
+    
+    @Override
+    public boolean actualizarEstudiante (int i, Estudiante estudiante){
+        estudiantes [i] = estudiante;     
+        return true; 
+    }
+
+    
 
 }
