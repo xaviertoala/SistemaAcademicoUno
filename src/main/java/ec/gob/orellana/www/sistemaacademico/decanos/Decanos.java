@@ -12,13 +12,14 @@ public class Decanos implements IDecanos {
 
     private Decano [] decanos; 
     private int totalDecanos; 
-
+    
     public Decanos(int dimension) {
         decanos = new Decano [dimension];
         totalDecanos= 0; 
 
     }
     
+    @Override
     public boolean AgregarDecanos (Decano decano){
         if (totalDecanos == decanos.length){
             return false; 
@@ -28,7 +29,7 @@ public class Decanos implements IDecanos {
             return true ;
         }
     }
-    
+    @Override
     public void imprimirDatos (){
         for (int i =0; i < totalDecanos; i++){ 
             System.out.println("------DECANO------"+"|"+(i+1)+"|");

@@ -1,5 +1,5 @@
 
-package ec.gob.orellana.www.sistemaacademico.personasexternas;
+package ec.gob.orellana.www.sistemaacademico.personasinvitadas;
 
 
 public interface IPersonasInvitadas {

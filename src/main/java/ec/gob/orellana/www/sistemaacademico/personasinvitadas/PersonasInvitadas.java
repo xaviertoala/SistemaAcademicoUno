@@ -1,6 +1,5 @@
 
-package ec.gob.orellana.www.sistemaacademico.personasexternas;
-
+package ec.gob.orellana.www.sistemaacademico.personasinvitadas;
 
 public class PersonasInvitadas implements IPersonasInvitadas {
     
@@ -26,6 +25,7 @@ public class PersonasInvitadas implements IPersonasInvitadas {
     public void imprimirDatos (){
         for (int i = 0; i < totalPersonasI; i++) {
             System.out.println("Datos de la persona invitada : " + personasInvitadas[i].getDescripcion());
+            
         }
     }
     
