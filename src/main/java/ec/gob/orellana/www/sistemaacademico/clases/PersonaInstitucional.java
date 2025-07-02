@@ -17,10 +17,16 @@ public  class PersonaInstitucional extends Persona{
         this.correoInstitucional = correoInstitucional;
     }
     
+    public String getCorreoInstitucional() {
+        return correoInstitucional;
+    }
+
     //Metodos Set y Get
-    
+    public void setCorreoInstitucional(String correoInstitucional) {    
+        this.correoInstitucional = correoInstitucional;
+    }
+
     //public abstract boolean verificarCedula ();
-    
     @Override
     public String toString() {
         return "PersonaInstitucional{" + "correoInstitucional=" + correoInstitucional + super.toString()+'}';

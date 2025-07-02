@@ -11,6 +11,7 @@ public class Profesor extends PersonalAcademico{
     public Profesor(Escalafon escalafon, double sueldo, String correoInstitucional, String nombre, int id, String correo, String cedula) {
         super(sueldo, correoInstitucional, nombre, id, correo, cedula);
         this.escalafon = escalafon;
+        super.toString();
     }
 
     public void setEscalafon(Escalafon escalafon) {
@@ -19,7 +20,15 @@ public class Profesor extends PersonalAcademico{
     public Escalafon getEscalafon() {
         return escalafon;
     }
-    
+   
+    public  void setCorreoInstitucional (){
+        
+        //supser.toString() = correoInstitucional;
+    }
+    public String getCorreoInstitucional (){
+        
+        return " ";
+    }
     
     @Override
     public String toString() {

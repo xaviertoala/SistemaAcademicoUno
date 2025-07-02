@@ -113,10 +113,6 @@ public class SistemaAcademico {
         //Metodo Eliminar Decano 
         Decano EliminarD = new Decano (" ", 0, " ", " ", 0, " ", " ");
         objDecano.eliminarDecano(1, EliminarD);
-        objDecano.imprimirDatos();
-        
-        
-        
-        
+        objDecano.imprimirDatos(); 
     }
 }

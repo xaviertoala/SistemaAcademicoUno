@@ -15,6 +15,14 @@ public  class Empleado extends PersonaInstitucional{
         super(correoInstitucional, nombre, id, correo, cedula);
         this.sueldo = sueldo;
     }
+
+    public double getSueldo() {
+        return sueldo;
+    }
+
+    public void setSueldo(double sueldo) {
+        this.sueldo = sueldo;
+    }
     
     // public abstract boolean verificarCedula ();
     @Override
