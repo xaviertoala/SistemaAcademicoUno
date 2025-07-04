@@ -20,11 +20,15 @@ import ec.gob.orellana.www.sistemaacademico.personasservicios.IPersonasServicios
 import ec.gob.orellana.www.sistemaacademico.personasservicios.PersonasServicios;
 import ec.gob.orellana.www.sistemaacademico.profesores.IProfesores;
 import ec.gob.orellana.www.sistemaacademico.profesores.Profesores;
+import ec.gob.orellana.www.sistemaacademico.vista.VEstudiantes;
 
 public class SistemaAcademico {
 
     public static void main(String[] args) {
         
+        VEstudiantes x = new VEstudiantes();
+        x.setVisible(true);
+        /*
         //CLASE PERSONA INVITADA
         System.out.println("---PERSONA INVITADA---");
         IPersonasInvitadas objPersonaInvitada  = new PersonasInvitadas(2); 
@@ -114,5 +118,6 @@ public class SistemaAcademico {
         Decano EliminarD = new Decano (" ", 0, " ", " ", 0, " ", " ");
         objDecano.eliminarDecano(1, EliminarD);
         objDecano.imprimirDatos(); 
+*/
     }
 }
