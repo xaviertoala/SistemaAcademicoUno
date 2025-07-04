@@ -1,6 +1,6 @@
 
 package ec.gob.orellana.www.sistemaacademico.vista;
-import ec.gob.orellana.www.sistemaacademico.controlador.ControladorEstudiantes;
+import ec.gob.orellana.www.sistemaacademico.controladorEstudiante.ControladorEstudiantes;
 
 public class VEstudiantes extends javax.swing.JFrame {
 

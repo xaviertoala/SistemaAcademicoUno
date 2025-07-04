@@ -1,5 +1,5 @@
 
-package ec.gob.orellana.www.sistemaacademico.controlador;
+package ec.gob.orellana.www.sistemaacademico.controladorEstudiante;
 
 import ec.gob.orellana.www.sistemaacademico.vista.NotificadorMSM;
 import ec.gob.orellana.www.sistemaacademico.vista.VEstudiantes;
