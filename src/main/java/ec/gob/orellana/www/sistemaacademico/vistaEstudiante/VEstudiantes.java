@@ -1,5 +1,5 @@
 
-package ec.gob.orellana.www.sistemaacademico.vista;
+package ec.gob.orellana.www.sistemaacademico.vistaEstudiante;
 import ec.gob.orellana.www.sistemaacademico.controladorEstudiante.ControladorEstudiantes;
 
 public class VEstudiantes extends javax.swing.JFrame {
@@ -41,13 +41,13 @@ public class VEstudiantes extends javax.swing.JFrame {
         jLabel1.setText("ESTUDIANTE");
         jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        lblNombre.setText("Nombre");
+        lblNombre.setText("Nombre:");
 
-        lblCorreoInstitucional.setText("Correo Institucional");
+        lblCorreoInstitucional.setText("Correo Institucional:");
 
-        lblCedula.setText("Cedula");
+        lblCedula.setText("Cédula:");
 
-        lblCorreoPersonal.setText("Correo Personal");
+        lblCorreoPersonal.setText("Correo Personal:");
 
         txtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,7 +68,7 @@ public class VEstudiantes extends javax.swing.JFrame {
             }
         });
 
-        lblCodigo.setText("Codigo");
+        lblCodigo.setText("Codigo:");
 
         txtCodigo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,9 +86,9 @@ public class VEstudiantes extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblCorreoInstitucional, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblCorreoPersonal, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(65, 65, 65)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtNombre)
@@ -100,7 +100,7 @@ public class VEstudiantes extends javax.swing.JFrame {
                         .addGap(152, 152, 152)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnAgregar)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jLabel1))))
                 .addContainerGap(173, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(

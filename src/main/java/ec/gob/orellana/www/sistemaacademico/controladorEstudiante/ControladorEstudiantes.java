@@ -1,8 +1,8 @@
 
 package ec.gob.orellana.www.sistemaacademico.controladorEstudiante;
 
-import ec.gob.orellana.www.sistemaacademico.vista.NotificadorMSM;
-import ec.gob.orellana.www.sistemaacademico.vista.VEstudiantes;
+import ec.gob.orellana.www.sistemaacademico.vistaEstudiante.NotificadorMSM;
+import ec.gob.orellana.www.sistemaacademico.vistaEstudiante.VEstudiantes;
 
 public class ControladorEstudiantes {
     
@@ -21,7 +21,8 @@ public class ControladorEstudiantes {
             String correoInstitucionalEstudiante = vistaEstudiantes.getCorreoInstitucionalEstudiante();
             String correoPersonalEstudiante = vistaEstudiantes.getCorreoPersonalEstudiante();
             String cedulaEstudiante = vistaEstudiantes.getCedula();
-            notificadorMSM.notificadorMSM("Vas bien crack!");
+            notificadorMSM.notificadorMSM("Estudiante Agregado!");
+            System.out.println("Nombre: "+ nombreEstudiante);
             
         } catch (Exception e) {
             notificadorMSM.notificadorMSM("ERROR");

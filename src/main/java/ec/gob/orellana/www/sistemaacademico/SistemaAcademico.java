@@ -20,7 +20,7 @@ import ec.gob.orellana.www.sistemaacademico.personasservicios.IPersonasServicios
 import ec.gob.orellana.www.sistemaacademico.personasservicios.PersonasServicios;
 import ec.gob.orellana.www.sistemaacademico.profesores.IProfesores;
 import ec.gob.orellana.www.sistemaacademico.profesores.Profesores;
-import ec.gob.orellana.www.sistemaacademico.vista.VEstudiantes;
+import ec.gob.orellana.www.sistemaacademico.vistaEstudiante.VEstudiantes;
 
 public class SistemaAcademico {
 
