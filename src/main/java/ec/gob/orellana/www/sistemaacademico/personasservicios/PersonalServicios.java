@@ -8,7 +8,7 @@ public class PersonalServicios extends Empleado{
     
     private String gremio;
 
-    public PersonalServicios(String gremio, double sueldo, String correoInstitucional, String nombre, int id, String correo, String cedula) {
+    public PersonalServicios(String gremio, String sueldo, String correoInstitucional, String nombre, int id, String correo, String cedula) {
         super(sueldo, correoInstitucional, nombre, id, correo, cedula);
         this.gremio = gremio;
     }

@@ -27,8 +27,8 @@ public class SistemaAcademico {
 
     public static void main(String[] args) {
         
-        VEstudiantes x = new VEstudiantes();
-        x.setVisible(true);
+        //VEstudiantes x = new VEstudiantes();
+        //x.setVisible(true);
         
         VProfesores p = new VProfesores ();
         p.setVisible(true);

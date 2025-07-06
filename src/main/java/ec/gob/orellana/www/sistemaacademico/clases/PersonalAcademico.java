@@ -10,7 +10,7 @@ package ec.gob.orellana.www.sistemaacademico.clases;
  */
 public class PersonalAcademico extends Empleado {
 
-    public PersonalAcademico(double sueldo, String correoInstitucional, String nombre, int id, String correo, String cedula) {
+    public PersonalAcademico(String sueldo, String correoInstitucional, String nombre, int id, String correo, String cedula) {
         super(sueldo, correoInstitucional, nombre, id, correo, cedula);
     }
     

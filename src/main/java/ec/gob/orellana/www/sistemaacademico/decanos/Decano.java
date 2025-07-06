@@ -9,7 +9,7 @@ import ec.gob.orellana.www.sistemaacademico.clases.PersonalAcademico;
 public class Decano extends PersonalAcademico {
     private String nivelJerarquico; 
 
-    public Decano(String nivelJerarquico, double sueldo, String correoInstitucional, String nombre, int id, String correo, String cedula) {
+    public Decano(String nivelJerarquico, String sueldo, String correoInstitucional, String nombre, int id, String correo, String cedula) {
         super(sueldo, correoInstitucional, nombre, id, correo, cedula);
         this.nivelJerarquico = nivelJerarquico;
     }
