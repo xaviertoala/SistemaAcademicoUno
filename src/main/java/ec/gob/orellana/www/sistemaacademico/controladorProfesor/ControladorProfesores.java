@@ -4,10 +4,66 @@
  */
 package ec.gob.orellana.www.sistemaacademico.controladorProfesor;
 
+import ec.gob.orellana.www.sistemaacademico.profesores.Escalafon;
+import ec.gob.orellana.www.sistemaacademico.profesores.IProfesores;
+import ec.gob.orellana.www.sistemaacademico.profesores.Profesor;
+import ec.gob.orellana.www.sistemaacademico.profesores.Profesores;
+import ec.gob.orellana.www.sistemaacademico.vistaProfesor.NotificadorProfe;
+import ec.gob.orellana.www.sistemaacademico.vistaProfesor.VProfesores;
+
 /**
  *
  * @author User
  */
 public class ControladorProfesores {
+    
+    private VProfesores vistaProfesor;
+    private IProfesores iProfesores = new Profesores(10);
+    private NotificadorProfe notificadorProfe;
+    //private Escalafon escalafon; 
+
+    public ControladorProfesores(VProfesores vistaProfesor) {
+        
+        this.vistaProfesor = vistaProfesor;
+        this.notificadorProfe = new NotificadorProfe();
+        
+    }
+    
+    public void procesoControladorProfesores(){
+    
+        try {
+            String nombreProfesor = vistaProfesor.getNombre();
+            String cedulaProfesor = vistaProfesor.getCedula();
+            String institucionalProfesor = vistaProfesor.getInstitucional();
+            String personalProfesor = vistaProfesor.getPersonal();
+            String sueldoProfesor = vistaProfesor.getSueldo();
+           
+            
+            if(nombreProfesor.isEmpty()
+                    ||cedulaProfesor.isEmpty()
+                    ||institucionalProfesor.isEmpty()
+                    ||personalProfesor.isEmpty()
+                    ||sueldoProfesor.isEmpty()){
+                notificadorProfe.notificadorProfe("Erro: No se pudo agregar el Profesor. Datos vacios..");
+                return;
+                
+            }
+            Profesor xprofesor = new Profesor(Escalafon.AGREGAR, 
+                    sueldoProfesor, 
+                    institucionalProfesor, 
+                    nombreProfesor, 
+                    0, 
+                    nombreProfesor, 
+                    cedulaProfesor);
+            
+            boolean respuesta = iProfesores.agregarProfesor(xprofesor);
+            if(true){
+                iProfesores.imprimirDatos();
+                notificadorProfe.notificadorProfe("Profesor Agregado");
+            }
+        } catch (Exception e) {
+            notificadorProfe.notificadorProfe("Error inesperado: " + e.getMessage());
+        }
+    }
     
 }

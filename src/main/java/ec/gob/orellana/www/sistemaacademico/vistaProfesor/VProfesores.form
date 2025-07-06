@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.ButtonGroup" name="btgContenedor">
+    </Component>
+  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -57,32 +61,41 @@
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       <Component id="lblEscalafon" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="102" attributes="0">
-                                      <Component id="jRadioButton1" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="jRadioButton2" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="156" max="-2" attributes="0"/>
+                                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="156" max="-2" attributes="0"/>
-                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="rbtPrincipal" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="rbtAgregar" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace min="-2" max="-2" attributes="0"/>
-              <Component id="jRadioButton3" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="rbtAuxiliar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="btnAgregarP" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
           </Group>
       </Group>
     </DimensionLayout>
@@ -111,18 +124,27 @@
                   <Component id="lblPersonal" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtPersonal" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="lblSueldo" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtSueldo" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="lblSueldo" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtSueldo" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="btnAgregarP" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace pref="21" max="32767" attributes="0"/>
               <Component id="lblEscalafon" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jRadioButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jRadioButton2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jRadioButton3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="rbtPrincipal" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="rbtAgregar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="rbtAuxiliar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
           </Group>
@@ -160,18 +182,30 @@
         <Property name="text" type="java.lang.String" value="Sueldo"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="jRadioButton1">
+    <Component class="javax.swing.JRadioButton" name="rbtPrincipal">
       <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="btgContenedor"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Principal"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="jRadioButton2">
+    <Component class="javax.swing.JRadioButton" name="rbtAgregar">
       <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="btgContenedor"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Agregar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbtAgregarActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="jRadioButton3">
+    <Component class="javax.swing.JRadioButton" name="rbtAuxiliar">
       <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="btgContenedor"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Auxiliar"/>
       </Properties>
     </Component>
@@ -189,6 +223,14 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Escalafon"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnAgregarP">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="AGREGAR"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAgregarPActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

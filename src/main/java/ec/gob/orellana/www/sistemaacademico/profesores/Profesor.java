@@ -8,7 +8,7 @@ public class Profesor extends PersonalAcademico{
     private Escalafon escalafon; 
     
 
-    public Profesor(Escalafon escalafon, double sueldo, String correoInstitucional, String nombre, int id, String correo, String cedula) {
+    public Profesor(Escalafon escalafon, String sueldo, String correoInstitucional, String nombre, int id, String correo, String cedula) {
         super(sueldo, correoInstitucional, nombre, id, correo, cedula);
         this.escalafon = escalafon;
         super.toString();

@@ -8,19 +8,19 @@ package ec.gob.orellana.www.sistemaacademico.clases;
 public  class Empleado extends PersonaInstitucional{
     
     //Atributos
-    private double sueldo;
+    private String sueldo;
 
     //Constructor
-    public Empleado(double sueldo, String correoInstitucional, String nombre, int id, String correo, String cedula) {
+    public Empleado(String sueldo, String correoInstitucional, String nombre, int id, String correo, String cedula) {
         super(correoInstitucional, nombre, id, correo, cedula);
         this.sueldo = sueldo;
     }
 
-    public double getSueldo() {
+    public String getSueldo() {
         return sueldo;
     }
 
-    public void setSueldo(double sueldo) {
+    public void setSueldo(String sueldo) {
         this.sueldo = sueldo;
     }
     

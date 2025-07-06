@@ -24,8 +24,15 @@ public class Profesores implements IProfesores {
     @Override
     public void imprimirDatos (){
         for(int i =0; i < totalProfesores;i++){
-        System.out.println("Datos del profesor :" + profesores[i].getEscalafon());
-        System.out.println("d"+ profesores[i].getCorreoInstitucional());
+            System.out.println("------Profesor------"+"|"+(i+1)+"|");
+            System.out.println("Escalafon: "+profesores[i].getEscalafon());
+            System.out.println("Nombre: "+ profesores[i].getNombre());
+            System.out.println("Cedula: "+ profesores[i].getCedula());
+            System.out.println("Correo Institucional: "+ profesores[i].getCorreoInstitucional());
+            System.out.println("Correo Personal: "+ profesores[i].getCorreo());
+            System.out.println("Sueldo: "+ profesores[i].getSueldo());
+            System.out.println(" ");
+        
         }
     }
 }
