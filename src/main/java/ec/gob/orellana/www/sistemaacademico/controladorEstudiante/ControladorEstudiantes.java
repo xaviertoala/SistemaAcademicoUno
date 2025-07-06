@@ -1,35 +1,56 @@
-
 package ec.gob.orellana.www.sistemaacademico.controladorEstudiante;
 
+import ec.gob.orellana.www.sistemaacademico.estudiantes.Estudiante;
+import ec.gob.orellana.www.sistemaacademico.estudiantes.Estudiantes;
+import ec.gob.orellana.www.sistemaacademico.estudiantes.IEstudiantes;
 import ec.gob.orellana.www.sistemaacademico.vistaEstudiante.NotificadorMSM;
 import ec.gob.orellana.www.sistemaacademico.vistaEstudiante.VEstudiantes;
 
 public class ControladorEstudiantes {
-    
-    private VEstudiantes vistaEstudiantes; 
+
+    private VEstudiantes vistaEstudiantes;
     private NotificadorMSM notificadorMSM;
-    
-    public ControladorEstudiantes (VEstudiantes vistaEstudiantes){
+    private IEstudiantes iEstudiantes = new Estudiantes(10);
+
+    public ControladorEstudiantes(VEstudiantes vistaEstudiantes) {
         this.vistaEstudiantes = vistaEstudiantes;
-        this.notificadorMSM = new NotificadorMSM ();
-    } 
-    public void procesoControladorEstudiantes (){
+        this.notificadorMSM = new NotificadorMSM();
+
+    }
+
+    public void procesoControladorEstudiantes() {
         try {
-            
             String nombreEstudiante = vistaEstudiantes.getNombreEstudiante();
             String codigoEstudiante = vistaEstudiantes.getCodigoEstudiante();
             String correoInstitucionalEstudiante = vistaEstudiantes.getCorreoInstitucionalEstudiante();
             String correoPersonalEstudiante = vistaEstudiantes.getCorreoPersonalEstudiante();
             String cedulaEstudiante = vistaEstudiantes.getCedula();
-            notificadorMSM.notificadorMSM("Estudiante Agregado!");
-            System.out.println("Nombre: "+ nombreEstudiante);
-            
+            if (nombreEstudiante.isEmpty() 
+                    || codigoEstudiante.isEmpty()
+                    || correoInstitucionalEstudiante.isEmpty() 
+                    || correoPersonalEstudiante.isEmpty()
+                    || cedulaEstudiante.isEmpty()) {
+                notificadorMSM.notificadorMSM("Error: No se pudo agregar el estudiante. Datos vacios.");
+                return; 
+            }
+            Estudiante xestudiante = new Estudiante(codigoEstudiante,
+                    correoInstitucionalEstudiante,
+                    nombreEstudiante,
+                    0,
+                    codigoEstudiante,
+                    cedulaEstudiante);
+            boolean respuestas = iEstudiantes.agregarEstudiantes(xestudiante);
+            if (true) {
+                iEstudiantes.imprimirDatosE();
+                notificadorMSM.notificadorMSM("Estudiante Agregado!");
+            } else {
+                notificadorMSM.notificadorMSM("No agregaste nd!");
+            }
+
         } catch (Exception e) {
-            notificadorMSM.notificadorMSM("ERROR");
-            
+            notificadorMSM.notificadorMSM("Error inesperado:  " + e.getMessage());
+
         }
     }
 
-   
-    
 }

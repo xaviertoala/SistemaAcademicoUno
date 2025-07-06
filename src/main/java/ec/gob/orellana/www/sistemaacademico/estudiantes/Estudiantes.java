@@ -21,11 +21,18 @@ public class Estudiantes implements IEstudiantes {
             return true;
         }     
     }
+
     @Override
-    public void imprimirDato (){
+    public void imprimirDatosE (){
         for (int i =0; i< totalEstudiantes; i++){
             System.out.println("------Estudiante------"+"|"+(i+1)+"|");
-            System.out.println("Datos del Estudiante: "+ estudiantes[i].getCodigo());
+            System.out.println("Nombre: "+ estudiantes[i].getNombre());
+            System.out.println("Codigo: "+ estudiantes[i].getCodigo());
+            System.out.println("Correo Institucional: "+ estudiantes[i].getCorreoInstitucional());
+            System.out.println("Cedula: "+ estudiantes[i].getCedula());
+            System.out.println("CorreoPersonal: " + estudiantes[i].getCorreo());
+            System.out.println(" ");
+            
         }
     }
         

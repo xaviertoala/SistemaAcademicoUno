@@ -6,18 +6,18 @@ import ec.gob.orellana.www.sistemaacademico.clases.PersonaInstitucional;
 
 public class Estudiante extends PersonaInstitucional{
     //Atributos
-    private int codigo;
+    private String codigo;
 
-    public Estudiante(int codigo, String correoInstitucional, String nombre, int id, String correo, String cedula) {
+    public Estudiante(String codigo, String correoInstitucional, String nombre, int id, String correo, String cedula) {
         super(correoInstitucional, nombre, id, correo, cedula);
         this.codigo = codigo;
     }
 
-    public int getCodigo() {
+    public String getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(int codigo) {
+    public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
 
