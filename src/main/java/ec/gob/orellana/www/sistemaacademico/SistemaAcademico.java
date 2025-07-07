@@ -20,6 +20,7 @@ import ec.gob.orellana.www.sistemaacademico.personasservicios.IPersonasServicios
 import ec.gob.orellana.www.sistemaacademico.personasservicios.PersonasServicios;
 import ec.gob.orellana.www.sistemaacademico.profesores.IProfesores;
 import ec.gob.orellana.www.sistemaacademico.profesores.Profesores;
+import ec.gob.orellana.www.sistemaacademico.vistaDecano.VDecanos;
 import ec.gob.orellana.www.sistemaacademico.vistaEstudiante.VEstudiantes;
 import ec.gob.orellana.www.sistemaacademico.vistaPersonasInvitada.VPersonasInvitadas;
 import ec.gob.orellana.www.sistemaacademico.vistaPersonasServicio.VPersonasServicios;
@@ -29,8 +30,8 @@ public class SistemaAcademico {
 
     public static void main(String[] args) {
         
-        //VEstudiantes x = new VEstudiantes();
-        //x.setVisible(true);
+        VEstudiantes x = new VEstudiantes();
+        x.setVisible(true);
         
         //VProfesores p = new VProfesores ();
         //p.setVisible(true);
@@ -38,8 +39,11 @@ public class SistemaAcademico {
         //VPersonasInvitadas i = new VPersonasInvitadas ();
         //i.setVisible(true);
         
-        VPersonasServicios s = new VPersonasServicios ();
-        s.setVisible(true);
+        //VPersonasServicios s = new VPersonasServicios ();
+        //s.setVisible(true);
+        
+        //VDecanos xx = new VDecanos ();
+        //xx.setVisible(true);
         /*
         //CLASE PERSONA INVITADA
         System.out.println("---PERSONA INVITADA---");

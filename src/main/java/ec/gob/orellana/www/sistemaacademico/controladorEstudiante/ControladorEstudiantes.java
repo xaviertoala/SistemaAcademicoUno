@@ -52,5 +52,11 @@ public class ControladorEstudiantes {
 
         }
     }
+    
+    public void procesoEliminarEstudiante (){
+        String EliminarEstudiante = vistaEstudiantes.getEliminarEstudianteCodigo();
+        Estudiante eliminarE = new Estudiante(" ", " ", " ", 0, " ", " ");
+        iEstudiantes.eliminarEstudiante(0, eliminarE);
+    }
 
 }

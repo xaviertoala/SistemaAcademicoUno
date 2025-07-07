@@ -33,6 +33,8 @@ public class VEstudiantes extends javax.swing.JFrame {
         btnAgregar = new javax.swing.JButton();
         lblCodigo = new javax.swing.JLabel();
         txtCodigo = new javax.swing.JTextField();
+        btnElminar = new javax.swing.JButton();
+        txtEliminar = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -76,6 +78,15 @@ public class VEstudiantes extends javax.swing.JFrame {
             }
         });
 
+        btnElminar.setText("ELIMINAR");
+        btnElminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnElminarActionPerformed(evt);
+            }
+        });
+
+        txtEliminar.setText("___________");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -99,9 +110,14 @@ public class VEstudiantes extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(152, 152, 152)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnAgregar)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnAgregar)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnElminar)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel1))))
-                .addContainerGap(140, Short.MAX_VALUE))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -129,7 +145,10 @@ public class VEstudiantes extends javax.swing.JFrame {
                     .addComponent(lblCorreoPersonal)
                     .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
-                .addComponent(btnAgregar)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAgregar)
+                    .addComponent(btnElminar)
+                    .addComponent(txtEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28))
         );
 
@@ -152,6 +171,14 @@ public class VEstudiantes extends javax.swing.JFrame {
     private void txtCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorreoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCorreoActionPerformed
+
+    private void btnElminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnElminarActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_btnElminarActionPerformed
+    public String getEliminarEstudianteCodigo (){
+        return txtEliminar.getText(); 
+    }
     
     public String getCedula (){
         return txtCedula.getText();
@@ -173,6 +200,7 @@ public class VEstudiantes extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
+    private javax.swing.JButton btnElminar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblCedula;
     private javax.swing.JLabel lblCodigo;
@@ -183,6 +211,7 @@ public class VEstudiantes extends javax.swing.JFrame {
     private javax.swing.JTextField txtCodigo;
     private javax.swing.JTextField txtCorreo;
     private javax.swing.JTextField txtCorreoInstitucional;
+    private javax.swing.JTextField txtEliminar;
     private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 }

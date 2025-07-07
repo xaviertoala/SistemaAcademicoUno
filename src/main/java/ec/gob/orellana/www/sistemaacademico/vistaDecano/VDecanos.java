@@ -4,17 +4,19 @@
  */
 package ec.gob.orellana.www.sistemaacademico.vistaDecano;
 
+import ec.gob.orellana.www.sistemaacademico.controladorDecano.ControladorDecanos;
+
 /**
  *
  * @author User
  */
 public class VDecanos extends javax.swing.JFrame {
 
-    /**
-     * Creates new form VDecanos
-     */
+    private ControladorDecanos controladorDecanos; 
+    
     public VDecanos() {
         initComponents();
+        controladorDecanos = new ControladorDecanos (this);
     }
 
     /**
@@ -33,12 +35,13 @@ public class VDecanos extends javax.swing.JFrame {
         txtNombre = new javax.swing.JTextField();
         txtCedula = new javax.swing.JTextField();
         txtPersonal = new javax.swing.JTextField();
-        lblInstuticional = new javax.swing.JLabel();
+        lblInstitucional = new javax.swing.JLabel();
         lblJerarquico = new javax.swing.JLabel();
         lblSueldo = new javax.swing.JLabel();
-        txtInstuticional = new javax.swing.JTextField();
+        txtInstitucional = new javax.swing.JTextField();
         txtJerarquico = new javax.swing.JTextField();
         txtSueldo = new javax.swing.JTextField();
+        btnAgregar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -50,43 +53,60 @@ public class VDecanos extends javax.swing.JFrame {
 
         lblPersonal.setText("Correo Personal");
 
-        lblInstuticional.setText("Correo Institucional");
+        lblInstitucional.setText("Correo Institucional");
 
         lblJerarquico.setText("Nivel Jerarquico");
 
         lblSueldo.setText("Sueldo");
 
+        btnAgregar.setText("AGREGAR");
+        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnAgregar)
+                .addGap(21, 21, 21))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(45, 45, 45)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(lblNombre)
-                                .addGap(89, 89, 89)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(133, 133, 133)
+                                .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(lblSueldo)
+                                    .addGap(95, 95, 95)
+                                    .addComponent(txtSueldo, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(lblPersonal)
+                                            .addComponent(lblInstitucional))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(lblCedula)
+                                            .addGap(68, 68, 68)))
+                                    .addGap(29, 29, 29)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(txtInstitucional)
+                                        .addComponent(txtPersonal, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(lblPersonal)
-                                        .addComponent(lblInstuticional)
-                                        .addComponent(lblJerarquico)
-                                        .addComponent(lblSueldo))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(lblCedula)
-                                        .addGap(68, 68, 68)))
-                                .addGap(29, 29, 29)
+                                    .addComponent(lblNombre)
+                                    .addComponent(lblJerarquico))
+                                .addGap(48, 48, 48)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtJerarquico, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE)
-                                    .addComponent(txtInstuticional)
-                                    .addComponent(txtPersonal)
-                                    .addComponent(txtSueldo)))))
+                                    .addComponent(txtNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE)
+                                    .addComponent(txtJerarquico)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(174, 174, 174)
                         .addComponent(jLabel1)))
@@ -101,7 +121,11 @@ public class VDecanos extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNombre)
                     .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(38, 38, 38)
+                .addGap(31, 31, 31)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblJerarquico)
+                    .addComponent(txtJerarquico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblCedula)
                     .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -111,67 +135,56 @@ public class VDecanos extends javax.swing.JFrame {
                     .addComponent(txtPersonal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblInstuticional)
-                    .addComponent(txtInstuticional, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblJerarquico)
-                    .addComponent(txtJerarquico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
+                    .addComponent(lblInstitucional)
+                    .addComponent(txtInstitucional, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtSueldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblSueldo))
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addGap(30, 30, 30)
+                .addComponent(btnAgregar)
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VDecanos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VDecanos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VDecanos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VDecanos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
+        // TODO add your handling code here:
+        controladorDecanos.procesoControladorDecanos();
+    }//GEN-LAST:event_btnAgregarActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new VDecanos().setVisible(true);
-            }
-        });
+    public String getNombre(){
+        return txtNombre.getText();
     }
-
+    public String getCedula (){
+        return txtCedula.getText();
+    }
+    public String getJerarquico (){
+        return  txtJerarquico.getText();
+    }
+    public String getInstitucional (){
+        return txtInstitucional.getText();
+    }
+    public String getPersonal (){
+        return txtPersonal.getText();
+    }
+    public String getSueldo (){
+        return txtSueldo.getText();
+    }
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAgregar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblCedula;
-    private javax.swing.JLabel lblInstuticional;
+    private javax.swing.JLabel lblInstitucional;
     private javax.swing.JLabel lblJerarquico;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblPersonal;
     private javax.swing.JLabel lblSueldo;
     private javax.swing.JTextField txtCedula;
-    private javax.swing.JTextField txtInstuticional;
+    private javax.swing.JTextField txtInstitucional;
     private javax.swing.JTextField txtJerarquico;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtPersonal;
