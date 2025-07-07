@@ -24,8 +24,13 @@ public class PersonasInvitadas implements IPersonasInvitadas {
     
     public void imprimirDatos (){
         for (int i = 0; i < totalPersonasI; i++) {
-            System.out.println("Datos de la persona invitada : " + personasInvitadas[i].getDescripcion());
-            
+            System.out.println("------Personas Invitadas------"+"|"+(i+1)+"|");
+            System.out.println("Nombre: "+ personasInvitadas[i].getNombre());
+            System.out.println("Cedula: "+ personasInvitadas[i].getCedula());
+            System.out.println("Correo Personal: "+ personasInvitadas[i].getCorreo());
+            System.out.println("Descripcion: "+ personasInvitadas[i].getDescripcion());
+            System.out.println(" ");
+      
         }
     }
     

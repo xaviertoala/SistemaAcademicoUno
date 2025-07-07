@@ -4,17 +4,21 @@
  */
 package ec.gob.orellana.www.sistemaacademico.vistaPersonasInvitada;
 
+import ec.gob.orellana.www.sistemaacademico.controladorPersonasInvitada.ControladorPersonasInvitadas;
+
 /**
  *
  * @author User
  */
 public class VPersonasInvitadas extends javax.swing.JFrame {
-
+    
+    private ControladorPersonasInvitadas controladorPersonasInvitadas;
     /**
      * Creates new form VPersonasInvitadas
      */
     public VPersonasInvitadas() {
         initComponents();
+        controladorPersonasInvitadas = new ControladorPersonasInvitadas(this);
     }
 
     /**
@@ -29,12 +33,13 @@ public class VPersonasInvitadas extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         lblNombre = new javax.swing.JLabel();
         lblCedula = new javax.swing.JLabel();
-        lblInstitucional = new javax.swing.JLabel();
+        lblPersonal = new javax.swing.JLabel();
         txtNombre = new javax.swing.JTextField();
         txtCedula = new javax.swing.JTextField();
-        txtInstitucional = new javax.swing.JTextField();
+        txtPersonal = new javax.swing.JTextField();
         lblDescripcion = new javax.swing.JLabel();
         txtDescripcion = new javax.swing.JTextField();
+        btnAgregar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -44,9 +49,16 @@ public class VPersonasInvitadas extends javax.swing.JFrame {
 
         lblCedula.setText("Cedula");
 
-        lblInstitucional.setText("Correo Personal");
+        lblPersonal.setText("Correo Personal");
 
         lblDescripcion.setText("Descripcion");
+
+        btnAgregar.setText("AGREGAR");
+        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -62,16 +74,19 @@ public class VPersonasInvitadas extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblNombre)
                             .addComponent(lblCedula)
-                            .addComponent(lblInstitucional)
+                            .addComponent(lblPersonal)
                             .addComponent(lblDescripcion))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtDescripcion, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtInstitucional, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE)
-                                .addComponent(txtCedula)
-                                .addComponent(txtNombre)))))
+                            .addComponent(txtPersonal, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE)
+                            .addComponent(txtCedula)
+                            .addComponent(txtNombre))))
                 .addGap(80, 80, 80))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(114, 114, 114)
+                .addComponent(btnAgregar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -88,62 +103,52 @@ public class VPersonasInvitadas extends javax.swing.JFrame {
                     .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblInstitucional)
-                    .addComponent(txtInstitucional, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblPersonal)
+                    .addComponent(txtPersonal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblDescripcion)
                     .addComponent(txtDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(89, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addComponent(btnAgregar)
+                .addGap(28, 28, 28))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
+        // TODO add your handling code here:
+        controladorPersonasInvitadas.procesoControladorPersonasInvitadas();
+    }//GEN-LAST:event_btnAgregarActionPerformed
+
+        public String getNombre(){
+        return txtNombre.getText();
+        }
+        public String getCedula(){
+        return txtCedula.getText();
+        }
+        public String getPersonal(){
+        return txtPersonal.getText();
+        }
+        public String getDescripcion(){
+        return txtDescripcion.getText();
+        }
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VPersonasInvitadas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VPersonasInvitadas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VPersonasInvitadas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VPersonasInvitadas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new VPersonasInvitadas().setVisible(true);
-            }
-        });
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAgregar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblCedula;
     private javax.swing.JLabel lblDescripcion;
-    private javax.swing.JLabel lblInstitucional;
     private javax.swing.JLabel lblNombre;
+    private javax.swing.JLabel lblPersonal;
     private javax.swing.JTextField txtCedula;
     private javax.swing.JTextField txtDescripcion;
-    private javax.swing.JTextField txtInstitucional;
     private javax.swing.JTextField txtNombre;
+    private javax.swing.JTextField txtPersonal;
     // End of variables declaration//GEN-END:variables
 }

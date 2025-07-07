@@ -23,8 +23,16 @@ public class PersonasServicios implements IPersonasServicios{
     }
     
     public void imprimirDatos (){
-        for(int i =0; i < totalPersonalS;i++)
-        System.out.println("Datos de la persona en servicio :" + personalServicios[i].getGremio());
+        for(int i =0; i < totalPersonalS;i++){
+            System.out.println("------Personas Servicio------"+"|"+(i+1)+"|");
+            System.out.println("Nombre: "+ personalServicios[i].getNombre());
+            System.out.println("Cedula: "+ personalServicios[i].getCedula());
+            System.out.println("Correo Personal: "+ personalServicios[i].getCorreo());
+            System.out.println("Correo Institucional: "+ personalServicios[i].getCorreoInstitucional());
+            System.out.println("Sueldo: "+ personalServicios[i].getSueldo());
+            System.out.println("Gremio: "+ personalServicios[i].getGremio());
+            System.out.println(" ");
+        }    
     }
     
     public boolean actualizarPersonalServicio(int i, PersonalServicios personalServicio){
