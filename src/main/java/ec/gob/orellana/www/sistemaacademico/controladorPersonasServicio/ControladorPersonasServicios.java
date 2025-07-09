@@ -41,7 +41,7 @@ public class ControladorPersonasServicios {
                     || institucionalPersonasServicios.isEmpty()
                     || sueldoPersonasServicios.isEmpty()
                     || gremioPersonasServicios.isEmpty()) {
-                notificadorPersonasServicios.notificadorPersonasServicios("Erro: No se pudo agregar el Profesor. Datos vacios..");
+                notificadorPersonasServicios.notificadorPersonasServicios("Erro: No se pudo agregar el Personal Servicio. Datos vacios..");
                 return;
 
             }

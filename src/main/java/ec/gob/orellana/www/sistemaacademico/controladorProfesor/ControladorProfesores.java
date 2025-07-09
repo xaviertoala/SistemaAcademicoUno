@@ -51,6 +51,7 @@ public class ControladorProfesores {
             String personalProfesor = vistaProfesor.getPersonal();
             String escalafonProfesor = vistaProfesor.getEscalafon();
             Escalafon tpEscalafon = identificarEscalafon(escalafonProfesor);
+            int idProfesor = Integer.parseInt(vistaProfesor.getId());
             String sueldoProfesor = vistaProfesor.getSueldo();
 
             if (nombreProfesor.isEmpty()
@@ -65,7 +66,7 @@ public class ControladorProfesores {
                     sueldoProfesor,
                     institucionalProfesor,
                     nombreProfesor,
-                    0,
+                    idProfesor,
                     nombreProfesor,
                     cedulaProfesor);
 
@@ -76,6 +77,72 @@ public class ControladorProfesores {
             }
         } catch (Exception e) {
             notificadorProfe.notificadorProfe("Error inesperado: " + e.getMessage());
+        }
+    }
+    
+    public void procesoBuscarProfesor(){
+        try {
+            int idProfesor = Integer.parseInt(vistaProfesor.getBuscar());
+            boolean profesorBuscado = iProfesores.buscarProfesor(idProfesor);
+            if (profesorBuscado == true){
+            
+            }
+            notificadorProfe.notificadorProfe("Profesor encontrado");
+            
+        } catch (Exception e) {
+            notificadorProfe.notificadorProfe("Profesor no encontrado");
+        }
+    }
+    
+    public void procesoControladorEliminarProfesor(){
+        try {
+            int idProfesor = Integer.parseInt(vistaProfesor.getBuscar());
+            boolean profesorBuscado = iProfesores.buscarProfesor(idProfesor);
+            if(profesorBuscado == true){
+                iProfesores.eliminarProfesor(idProfesor);
+                notificadorProfe.notificadorProfe("Profesor dado de Baja.");
+                iProfesores.imprimirDatos();
+            } else {
+                notificadorProfe.notificadorProfe("Error en Eliminar Profesor");
+            }
+        } catch (Exception e) {
+            notificadorProfe.notificadorProfe("Error en Eliminar Profesor");
+        }
+    }
+    
+    public void procesoControladorActualizarProfesor(){
+        try {
+            int idProfesor = Integer.parseInt(vistaProfesor.getBuscar());
+            boolean actualizarPI = iProfesores.buscarProfesor(idProfesor);
+            if (actualizarPI){
+            String nombreProfesor = vistaProfesor.getNombre();
+            String cedulaProfesor = vistaProfesor.getCedula();
+            String institucionalProfesor = vistaProfesor.getInstitucional();
+            String personalProfesor = vistaProfesor.getPersonal();
+            String escalafonProfesor = vistaProfesor.getEscalafon();
+            String sueldoProfesor = vistaProfesor.getSueldo();
+            Escalafon tpEscalafon = identificarEscalafon(escalafonProfesor);
+            
+            Profesor profesorActualizado = new Profesor(tpEscalafon,
+                    sueldoProfesor,
+                    institucionalProfesor,
+                    nombreProfesor,
+                    idProfesor,
+                    nombreProfesor,
+                    cedulaProfesor);
+            
+                    iProfesores.actualizarProfesor(idProfesor, profesorActualizado);
+                    notificadorProfe.notificadorProfe("Profesor actualizado");
+                    iProfesores.imprimirDatos();
+            }else{
+                notificadorProfe.notificadorProfe("No se encontro el ID del Profesor"+idProfesor);
+            }
+          
+        } catch (NumberFormatException ex) {
+            notificadorProfe.notificadorProfe("Sueldo o ID invalido. Verificar la información");
+        }  catch (Exception e) {
+            e.printStackTrace();
+            notificadorProfe.notificadorProfe("Error al actualizar Profesor");
         }
     }
 

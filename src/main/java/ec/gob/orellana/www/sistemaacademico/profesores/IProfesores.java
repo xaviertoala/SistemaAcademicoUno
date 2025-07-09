@@ -11,4 +11,7 @@ package ec.gob.orellana.www.sistemaacademico.profesores;
 public interface IProfesores {
     public boolean agregarProfesor(Profesor profesores);
     public void imprimirDatos();
+    public boolean eliminarProfesor(int id);
+    public boolean actualizarProfesor(int id, Profesor proofesores);
+    public boolean buscarProfesor(int id);
 }
