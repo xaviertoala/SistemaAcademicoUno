@@ -41,9 +41,11 @@ public class SistemaAcademico {
         
         //VPersonasServicios s = new VPersonasServicios ();
         //s.setVisible(true);
+
         
         //VDecanos xx = new VDecanos ();
         //xx.setVisible(true);
+
         /*
         //CLASE PERSONA INVITADA
         System.out.println("---PERSONA INVITADA---");
