@@ -5,6 +5,8 @@ package ec.gob.orellana.www.sistemaacademico.personasinvitadas;
 public interface IPersonasInvitadas {
     public boolean agregarpersonaInvitada(PersonaInvitada personasInvitadas);
     public void imprimirDatos ();
-    public boolean actualizarPersonaInvitada (int i, PersonaInvitada personasInvitadas );
+    public boolean actualizarPersonaInvitada (int i, PersonaInvitada persoonaInvitada );
+    public boolean eliminarPersonasInvitadas(int id);
+    public boolean buscarPersonasInvitadas(int id);
     
 }

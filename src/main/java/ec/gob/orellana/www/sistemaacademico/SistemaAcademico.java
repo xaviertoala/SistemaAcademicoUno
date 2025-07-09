@@ -33,17 +33,17 @@ public class SistemaAcademico {
       //  VEstudiantes x = new VEstudiantes();
       //  x.setVisible(true);
         
-       // VProfesores p = new VProfesores ();
-       // p.setVisible(true);
+        //VProfesores p = new VProfesores ();
+        //p.setVisible(true);
         
-        //VPersonasInvitadas i = new VPersonasInvitadas ();
-        //i.setVisible(true);
+        VPersonasInvitadas i = new VPersonasInvitadas ();
+        i.setVisible(true);
         
         //VPersonasServicios s = new VPersonasServicios ();
         //s.setVisible(true);
 
-        VDecanos xx = new VDecanos ();
-        xx.setVisible(true);
+        //VDecanos xx = new VDecanos ();
+        //xx.setVisible(true);
 
         /*
         //CLASE PERSONA INVITADA

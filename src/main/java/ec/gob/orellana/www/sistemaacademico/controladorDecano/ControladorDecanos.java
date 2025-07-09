@@ -53,6 +53,7 @@ public class ControladorDecanos {
             notificadorDecano.notificadorDecano("Error inesperado:  " + e.getMessage());
         }
     }
+<<<<<<< HEAD
 
     public void procesoBuscarD() {
         try {
@@ -113,4 +114,11 @@ public class ControladorDecanos {
         }
 
     }
+=======
+    
+    
+    
+    
+    
+>>>>>>> 6a4651338b0c86f13369bb9cd20ecb77bfdf20ed
 }
