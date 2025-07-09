@@ -48,6 +48,7 @@ public class VProfesores extends javax.swing.JFrame {
         rbtPrincipal = new javax.swing.JRadioButton();
         rbtAgregar = new javax.swing.JRadioButton();
         rbtAuxiliar = new javax.swing.JRadioButton();
+        btnNuevoProfesor = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -86,11 +87,18 @@ public class VProfesores extends javax.swing.JFrame {
         btgContenedor.add(rbtAuxiliar);
         rbtAuxiliar.setText("Auxiliar");
 
+        btnNuevoProfesor.setText("NUEVO PROFESOR");
+        btnNuevoProfesor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNuevoProfesorActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(37, 37, 37)
@@ -131,14 +139,16 @@ public class VProfesores extends javax.swing.JFrame {
                                 .addComponent(rbtAgregar)))
                         .addGap(89, 89, 89)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(btnAgregarP)
-                        .addGap(18, 18, 18))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(rbtAuxiliar)
-                        .addGap(48, 48, 48))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnNuevoProfesor)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(rbtAuxiliar)
+                                .addGap(102, 102, 102))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addComponent(btnAgregarP))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -173,7 +183,9 @@ public class VProfesores extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
                         .addComponent(btnAgregarP)
-                        .addGap(63, 63, 63)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnNuevoProfesor)
+                        .addGap(34, 34, 34)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rbtPrincipal)
                     .addComponent(rbtAgregar)
@@ -193,6 +205,14 @@ public class VProfesores extends javax.swing.JFrame {
         // TODO add your handling code here:
         
     }//GEN-LAST:event_rbtAgregarActionPerformed
+
+    private void btnNuevoProfesorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoProfesorActionPerformed
+        // TODO add your handling code here:
+        txtNombre.setText(null);
+        txtCedula.setText(null);
+        txtPersonal.setText(null);
+        txtInstitucional.setText(null);
+    }//GEN-LAST:event_btnNuevoProfesorActionPerformed
 
     public String getEscalafon(){
     if (rbtPrincipal.isSelected()) return rbtPrincipal.getText();
@@ -221,6 +241,7 @@ public class VProfesores extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup btgContenedor;
     private javax.swing.JButton btnAgregarP;
+    private javax.swing.JButton btnNuevoProfesor;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblCedula;
     private javax.swing.JLabel lblEscalafon;

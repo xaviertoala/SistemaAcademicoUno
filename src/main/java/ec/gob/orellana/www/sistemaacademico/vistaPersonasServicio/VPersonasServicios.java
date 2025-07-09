@@ -44,6 +44,7 @@ public class VPersonasServicios extends javax.swing.JFrame {
         txtSueldo = new javax.swing.JTextField();
         txtGremio = new javax.swing.JTextField();
         btnAgregar = new javax.swing.JButton();
+        btnNuevoPServicios = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -65,6 +66,13 @@ public class VPersonasServicios extends javax.swing.JFrame {
         btnAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAgregarActionPerformed(evt);
+            }
+        });
+
+        btnNuevoPServicios.setText("NUEVA PERSONA S.");
+        btnNuevoPServicios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNuevoPServiciosActionPerformed(evt);
             }
         });
 
@@ -100,9 +108,12 @@ public class VPersonasServicios extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnAgregar)
-                    .addComponent(jLabel1))
-                .addGap(133, 133, 133))
+                    .addComponent(jLabel1)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnAgregar)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnNuevoPServicios)))
+                .addGap(87, 87, 87))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -134,7 +145,9 @@ public class VPersonasServicios extends javax.swing.JFrame {
                     .addComponent(lbGremio)
                     .addComponent(txtGremio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
-                .addComponent(btnAgregar)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAgregar)
+                    .addComponent(btnNuevoPServicios))
                 .addContainerGap(30, Short.MAX_VALUE))
         );
 
@@ -145,6 +158,17 @@ public class VPersonasServicios extends javax.swing.JFrame {
         // TODO add your handling code here:
         controladorPersonasServicio.procesoControladorPersonasServicios();
     }//GEN-LAST:event_btnAgregarActionPerformed
+
+    private void btnNuevoPServiciosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoPServiciosActionPerformed
+        // TODO add your handling code here:
+        txtNombre.setText(null);
+        txtCedula.setText(null);
+        txtGremio.setText(null);
+        txtInstitucional.setText(null);
+        txtPersonal.setText(null);
+        txtSueldo.setText(null);
+        
+    }//GEN-LAST:event_btnNuevoPServiciosActionPerformed
 
         public String getNombre(){
         return txtNombre.getText();
@@ -171,6 +195,7 @@ public class VPersonasServicios extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
+    private javax.swing.JButton btnNuevoPServicios;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lbGremio;
     private javax.swing.JLabel lblCedula;

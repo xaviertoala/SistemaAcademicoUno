@@ -25,38 +25,44 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lblCorreoInstitucional" alignment="0" min="-2" pref="113" max="-2" attributes="0"/>
-                          <Component id="lblNombre" alignment="0" min="-2" pref="66" max="-2" attributes="0"/>
-                          <Component id="lblCorreoPersonal" alignment="0" min="-2" pref="101" max="-2" attributes="0"/>
-                          <Component id="lblCodigo" alignment="0" min="-2" pref="55" max="-2" attributes="0"/>
-                          <Component id="lblCedula" alignment="0" min="-2" pref="54" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="152" max="-2" attributes="0"/>
+                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                              <Component id="txtEliminar" min="-2" pref="71" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="lblCorreoInstitucional" alignment="0" min="-2" pref="113" max="-2" attributes="0"/>
+                                      <Component id="lblNombre" alignment="0" min="-2" pref="66" max="-2" attributes="0"/>
+                                      <Component id="lblCodigo" alignment="0" min="-2" pref="55" max="-2" attributes="0"/>
+                                      <Component id="lblCedula" alignment="0" min="-2" pref="54" max="-2" attributes="0"/>
+                                      <Component id="lblCorreoPersonal" alignment="0" min="-2" pref="101" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="txtNombre" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="txtCodigo" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="txtCedula" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="txtCorreo" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="txtCorreoInstitucional" alignment="0" min="-2" pref="166" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="txtNombre" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtCodigo" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtCedula" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtCorreo" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtCorreoInstitucional" alignment="0" min="-2" pref="166" max="-2" attributes="0"/>
-                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btnElminar" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="152" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="btnAgregar" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="btnElminar" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="txtEliminar" min="-2" pref="71" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btnAgregar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btnNuevoEstudiante" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="59" max="32767" attributes="0"/>
+              <EmptySpace pref="51" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -90,11 +96,15 @@
                   <Component id="lblCorreoPersonal" min="-2" max="-2" attributes="0"/>
                   <Component id="txtCorreo" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="110" max="32767" attributes="0"/>
+              <EmptySpace pref="57" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnAgregar" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnElminar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnNuevoEstudiante" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="txtEliminar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnElminar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
           </Group>
@@ -179,9 +189,17 @@
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtEliminar">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtEliminarActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnNuevoEstudiante">
       <Properties>
-        <Property name="text" type="java.lang.String" value="___________"/>
+        <Property name="text" type="java.lang.String" value="NUEVO ESTUDIANTE"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNuevoEstudianteActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

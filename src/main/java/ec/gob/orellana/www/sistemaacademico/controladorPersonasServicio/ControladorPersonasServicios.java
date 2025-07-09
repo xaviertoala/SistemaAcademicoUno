@@ -15,19 +15,18 @@ import ec.gob.orellana.www.sistemaacademico.vistaPersonasServicio.VPersonasServi
  * @author User
  */
 public class ControladorPersonasServicios {
-    
+
     private VPersonasServicios vistaPersonasServicios;
     private IPersonasServicios iPersonasServicios = new PersonasServicios(10);
     private NotificadorPersonasServicios notificadorPersonasServicios;
-    
-    
-    public ControladorPersonasServicios(VPersonasServicios vistaPersonasServicios){
-       
-       this.vistaPersonasServicios =  vistaPersonasServicios;
-       this.notificadorPersonasServicios = new NotificadorPersonasServicios();
+
+    public ControladorPersonasServicios(VPersonasServicios vistaPersonasServicios) {
+
+        this.vistaPersonasServicios = vistaPersonasServicios;
+        this.notificadorPersonasServicios = new NotificadorPersonasServicios();
     }
-    
-    public void procesoControladorPersonasServicios(){
+
+    public void procesoControladorPersonasServicios() {
         try {
             String nombrePersonasServicios = vistaPersonasServicios.getNombre();
             String cedulaPersonasServicios = vistaPersonasServicios.getCedula();
@@ -35,27 +34,27 @@ public class ControladorPersonasServicios {
             String institucionalPersonasServicios = vistaPersonasServicios.getInstitucional();
             String sueldoPersonasServicios = vistaPersonasServicios.getSueldo();
             String gremioPersonasServicios = vistaPersonasServicios.getGremio();
-            
-            if(nombrePersonasServicios.isEmpty()
-                    ||cedulaPersonasServicios.isEmpty()
-                    ||personalPersonasServicios.isEmpty()
-                    ||institucionalPersonasServicios.isEmpty()
-                    ||sueldoPersonasServicios.isEmpty()
-                    ||gremioPersonasServicios.isEmpty()){
+
+            if (nombrePersonasServicios.isEmpty()
+                    || cedulaPersonasServicios.isEmpty()
+                    || personalPersonasServicios.isEmpty()
+                    || institucionalPersonasServicios.isEmpty()
+                    || sueldoPersonasServicios.isEmpty()
+                    || gremioPersonasServicios.isEmpty()) {
                 notificadorPersonasServicios.notificadorPersonasServicios("Erro: No se pudo agregar el Profesor. Datos vacios..");
                 return;
-                
+
             }
-            PersonalServicios xservicios = new PersonalServicios(gremioPersonasServicios, 
-                    sueldoPersonasServicios, 
-                    nombrePersonasServicios, 
-                    nombrePersonasServicios, 
-                    0, 
-                    nombrePersonasServicios, 
+            PersonalServicios xservicios = new PersonalServicios(gremioPersonasServicios,
+                    sueldoPersonasServicios,
+                    nombrePersonasServicios,
+                    nombrePersonasServicios,
+                    0,
+                    nombrePersonasServicios,
                     cedulaPersonasServicios);
-            
+
             boolean respuesta = iPersonasServicios.agregarPersonalServicio(xservicios);
-            if(true){
+            if (true) {
                 iPersonasServicios.imprimirDatos();
                 notificadorPersonasServicios.notificadorPersonasServicios("Persona Servicio Agregado");
             }

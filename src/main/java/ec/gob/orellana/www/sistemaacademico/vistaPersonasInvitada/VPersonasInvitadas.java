@@ -40,6 +40,7 @@ public class VPersonasInvitadas extends javax.swing.JFrame {
         lblDescripcion = new javax.swing.JLabel();
         txtDescripcion = new javax.swing.JTextField();
         btnAgregar = new javax.swing.JButton();
+        btnNuevaPInvitada = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,33 +61,44 @@ public class VPersonasInvitadas extends javax.swing.JFrame {
             }
         });
 
+        btnNuevaPInvitada.setText("NUEVA PERSONA I.");
+        btnNuevaPInvitada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNuevaPInvitadaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(137, 137, 137)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(47, 47, 47)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(137, 137, 137)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(47, 47, 47)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblNombre)
                             .addComponent(lblCedula)
                             .addComponent(lblPersonal)
                             .addComponent(lblDescripcion))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtDescripcion, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE)
-                            .addComponent(txtPersonal, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE)
-                            .addComponent(txtCedula)
-                            .addComponent(txtNombre))))
-                .addGap(80, 80, 80))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(114, 114, 114)
-                .addComponent(btnAgregar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txtPersonal)
+                                .addComponent(txtCedula)
+                                .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(80, 80, 80))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnAgregar)
+                        .addGap(32, 32, 32)
+                        .addComponent(btnNuevaPInvitada)
+                        .addGap(55, 55, 55))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -105,13 +117,19 @@ public class VPersonasInvitadas extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPersonal)
                     .addComponent(txtPersonal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(lblDescripcion)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtDescripcion)
+                        .addGap(35, 35, 35)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblDescripcion)
-                    .addComponent(txtDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
-                .addComponent(btnAgregar)
-                .addGap(28, 28, 28))
+                    .addComponent(btnAgregar)
+                    .addComponent(btnNuevaPInvitada))
+                .addGap(19, 19, 19))
         );
 
         pack();
@@ -121,6 +139,14 @@ public class VPersonasInvitadas extends javax.swing.JFrame {
         // TODO add your handling code here:
         controladorPersonasInvitadas.procesoControladorPersonasInvitadas();
     }//GEN-LAST:event_btnAgregarActionPerformed
+
+    private void btnNuevaPInvitadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevaPInvitadaActionPerformed
+        // TODO add your handling code here:
+        txtNombre.setText(null);
+        txtCedula.setText(null);
+        txtPersonal.setText(null);
+        txtDescripcion.setText(null);
+    }//GEN-LAST:event_btnNuevaPInvitadaActionPerformed
 
         public String getNombre(){
         return txtNombre.getText();
@@ -141,6 +167,7 @@ public class VPersonasInvitadas extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
+    private javax.swing.JButton btnNuevaPInvitada;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblCedula;
     private javax.swing.JLabel lblDescripcion;

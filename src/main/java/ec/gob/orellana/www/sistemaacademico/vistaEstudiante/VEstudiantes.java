@@ -35,6 +35,7 @@ public class VEstudiantes extends javax.swing.JFrame {
         txtCodigo = new javax.swing.JTextField();
         btnElminar = new javax.swing.JButton();
         txtEliminar = new javax.swing.JTextField();
+        btnNuevoEstudiante = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -85,7 +86,18 @@ public class VEstudiantes extends javax.swing.JFrame {
             }
         });
 
-        txtEliminar.setText("___________");
+        txtEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEliminarActionPerformed(evt);
+            }
+        });
+
+        btnNuevoEstudiante.setText("NUEVO ESTUDIANTE");
+        btnNuevoEstudiante.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNuevoEstudianteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -95,29 +107,33 @@ public class VEstudiantes extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblCorreoInstitucional, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblCorreoPersonal, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(65, 65, 65)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtNombre)
-                            .addComponent(txtCodigo)
-                            .addComponent(txtCedula)
-                            .addComponent(txtCorreo)
-                            .addComponent(txtCorreoInstitucional, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(152, 152, 152)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnAgregar)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnElminar)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel1))))
-                .addContainerGap(59, Short.MAX_VALUE))
+                                .addGap(152, 152, 152)
+                                .addComponent(jLabel1))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(txtEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(lblCorreoInstitucional, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(lblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(lblCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(lblCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(lblCorreoPersonal, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(65, 65, 65)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(txtNombre)
+                                        .addComponent(txtCodigo)
+                                        .addComponent(txtCedula)
+                                        .addComponent(txtCorreo)
+                                        .addComponent(txtCorreoInstitucional, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnElminar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnAgregar)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnNuevoEstudiante)))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -144,11 +160,14 @@ public class VEstudiantes extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblCorreoPersonal)
                     .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAgregar)
-                    .addComponent(btnElminar)
-                    .addComponent(txtEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnNuevoEstudiante))
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnElminar))
                 .addGap(28, 28, 28))
         );
 
@@ -165,7 +184,7 @@ public class VEstudiantes extends javax.swing.JFrame {
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
         // TODO add your handling code here:
-              controladorEstudiantes.procesoControladorEstudiantes();
+        controladorEstudiantes.procesoControladorEstudiantes();
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void txtCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorreoActionPerformed
@@ -174,10 +193,26 @@ public class VEstudiantes extends javax.swing.JFrame {
 
     private void btnElminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnElminarActionPerformed
         // TODO add your handling code here:
+       controladorEstudiantes.procesoEliminarEstudiante();
         
     }//GEN-LAST:event_btnElminarActionPerformed
+
+    private void btnNuevoEstudianteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoEstudianteActionPerformed
+        // TODO add your handling code here:
+        txtNombre.setText(null);
+        txtCedula.setText(null);
+        txtCodigo.setText(null);
+        txtCorreo.setText(null);
+        txtCorreoInstitucional.setText(null);
+        
+        
+    }//GEN-LAST:event_btnNuevoEstudianteActionPerformed
+
+    private void txtEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEliminarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEliminarActionPerformed
     public String getEliminarEstudianteCodigo (){
-        return txtEliminar.getText(); 
+        return txtEliminar.getText().trim(); 
     }
     
     public String getCedula (){
@@ -201,6 +236,7 @@ public class VEstudiantes extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnElminar;
+    private javax.swing.JButton btnNuevoEstudiante;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblCedula;
     private javax.swing.JLabel lblCodigo;

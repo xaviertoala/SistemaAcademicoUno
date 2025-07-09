@@ -15,7 +15,7 @@ public class ControladorDecanos {
     
     public ControladorDecanos(VDecanos vistaDecanos) {
         this.vistaDecanos = vistaDecanos;
-        this.notificadorDecano = notificadorDecano; 
+        this.notificadorDecano = new NotificadorDecano (); 
         
     }
     
@@ -50,6 +50,7 @@ public class ControladorDecanos {
                 notificadorDecano.notificadorDecano("Decano agregado!");
             }
         } catch (Exception e) {
+            notificadorDecano.notificadorDecano("Error inesperado:  " + e.getMessage());
         }
     }
     

@@ -42,6 +42,7 @@ public class VDecanos extends javax.swing.JFrame {
         txtJerarquico = new javax.swing.JTextField();
         txtSueldo = new javax.swing.JTextField();
         btnAgregar = new javax.swing.JButton();
+        btnNuevoDecano = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -66,6 +67,13 @@ public class VDecanos extends javax.swing.JFrame {
             }
         });
 
+        btnNuevoDecano.setText("NUEVO DECANO");
+        btnNuevoDecano.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNuevoDecanoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -73,7 +81,9 @@ public class VDecanos extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(btnAgregar)
-                .addGap(21, 21, 21))
+                .addGap(18, 18, 18)
+                .addComponent(btnNuevoDecano)
+                .addGap(66, 66, 66))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -142,7 +152,9 @@ public class VDecanos extends javax.swing.JFrame {
                     .addComponent(txtSueldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblSueldo))
                 .addGap(30, 30, 30)
-                .addComponent(btnAgregar)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAgregar)
+                    .addComponent(btnNuevoDecano))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
@@ -153,6 +165,16 @@ public class VDecanos extends javax.swing.JFrame {
         // TODO add your handling code here:
         controladorDecanos.procesoControladorDecanos();
     }//GEN-LAST:event_btnAgregarActionPerformed
+
+    private void btnNuevoDecanoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoDecanoActionPerformed
+        // TODO add your handling code here:
+        txtNombre.setText(null);
+        txtCedula.setText(null);
+        txtJerarquico.setText(null);
+        txtPersonal.setText(null);
+        txtInstitucional.setText(null);
+        txtSueldo.setText(null);
+    }//GEN-LAST:event_btnNuevoDecanoActionPerformed
 
     public String getNombre(){
         return txtNombre.getText();
@@ -176,6 +198,7 @@ public class VDecanos extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
+    private javax.swing.JButton btnNuevoDecano;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblCedula;
     private javax.swing.JLabel lblInstitucional;
