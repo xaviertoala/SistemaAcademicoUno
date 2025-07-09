@@ -21,12 +21,12 @@ public class ControladorEstudiantes {
     public void procesoControladorEstudiantes() {
         try {
             String nombreEstudiante = vistaEstudiantes.getNombreEstudiante();
-            String codigoEstudiante = vistaEstudiantes.getCodigoEstudiante();
+            int codigoEstudiante = Integer.parseInt(vistaEstudiantes.getCodigoEstudiante());
             String correoInstitucionalEstudiante = vistaEstudiantes.getCorreoInstitucionalEstudiante();
             String correoPersonalEstudiante = vistaEstudiantes.getCorreoPersonalEstudiante();
             String cedulaEstudiante = vistaEstudiantes.getCedula();
             if (nombreEstudiante.isEmpty()
-                    || codigoEstudiante.isEmpty()
+                    //|| codigoEstudiante.isEmpty()
                     || correoInstitucionalEstudiante.isEmpty()
                     || correoPersonalEstudiante.isEmpty()
                     || cedulaEstudiante.isEmpty()) {
@@ -52,20 +52,65 @@ public class ControladorEstudiantes {
 
         }
     }
-    
 
-    public void procesoEliminarEstudiante() {
-            String codigo = vistaEstudiantes.getEliminarEstudianteCodigo();
-            iEstudiantes.eliminarEstudiante(codigo);
-            iEstudiantes.imprimirDatosE();
+    public void procesoBuscarEstudiante() {
+        try {
+            int codigoEstudiante = Integer.parseInt(vistaEstudiantes.getBuscarEstudianteCodigo());
+            boolean estudianteBuscado = iEstudiantes.buscarEstudiante(codigoEstudiante);
+            if (estudianteBuscado == true) {
+                notificadorMSM.notificadorMSM("Estudiante buscado");
+            } else {
+                notificadorMSM.notificadorMSM("Estudiante no encontrado");
+            }
+        } catch (Exception e) {
+            notificadorMSM.notificadorMSM("Estudiante no encontrado");
         }
-      //  Estudiante eliminarE = new Estudiante(" ", " ", " ", 0, " ", " ");
-      //  iEstudiantes.eliminarEstudiante(codigoEstudianteEliminado, eliminarE);
-      //  iEstudiantes.imprimirDatosE();
-    
-        
-    
-    
+
+    }
+
+    public void procesoEliminarE() {
+        try {
+            int codigoEstudiante = Integer.parseInt(vistaEstudiantes.getBuscarEstudianteCodigo());
+            boolean estudianteBuscado = iEstudiantes.buscarEstudiante(codigoEstudiante);
+            if (estudianteBuscado) {
+                iEstudiantes.eliminarEstudiante(codigoEstudiante);
+                notificadorMSM.notificadorMSM("Estudiante dado de baja");
+                iEstudiantes.imprimirDatosE();
+            }
+
+        } catch (Exception e) {
+            notificadorMSM.notificadorMSM("Estudiante no encontrado");
+        }
+    }
+
+    public void procesoActualizarE() {
+        try {
+            int codigoEstudiante = Integer.parseInt(vistaEstudiantes.getBuscarEstudianteCodigo());
+            boolean actualizar = iEstudiantes.buscarEstudiante(codigoEstudiante);
+            if (actualizar) {
+                String nombreEstudiante = vistaEstudiantes.getNombreEstudiante();
+                //int codigoEstudiante = Integer.parseInt(vistaEstudiantes.getCodigoEstudiante());
+                String correoInstitucionalEstudiante = vistaEstudiantes.getCorreoInstitucionalEstudiante();
+                String correoPersonalEstudiante = vistaEstudiantes.getCorreoPersonalEstudiante();
+                String cedulaEstudiante = vistaEstudiantes.getCedula();
+
+                Estudiante estudianteActualizado = new Estudiante(codigoEstudiante,
+                        correoInstitucionalEstudiante,
+                        nombreEstudiante,
+                        codigoEstudiante,
+                        nombreEstudiante,
+                        cedulaEstudiante);
+                iEstudiantes.actualizarEstudiante(codigoEstudiante, estudianteActualizado);
+                notificadorMSM.notificadorMSM("Estudiante Actualizado.");
+                iEstudiantes.imprimirDatosE();
+
+            } else {
+                notificadorMSM.notificadorMSM("No se encontro estudiante con codigo: " + codigoEstudiante);
+            }
+
+        } catch (Exception e) {
+            notificadorMSM.notificadorMSM("Error al actualizar Estudiante. ");
+        }
+
+    }
 }
-
-

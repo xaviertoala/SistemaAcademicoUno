@@ -35,25 +35,40 @@ public class Estudiantes implements IEstudiantes {
         }
     }
 
-    @Override
-    public boolean eliminarEstudiante(String codigo) {
-        for (int i = 0; i < totalEstudiantes; i++) {
+    public boolean buscarEstudiante(int codigo) {
+         for (int i = 0; i < totalEstudiantes; i++) {
             if (estudiantes[i].getCodigo() == codigo) {
-                for (int j = i; i < totalEstudiantes - 1; j++) {
-                    estudiantes[j] = estudiantes[j + 1];
+             return true; 
+            }
+         }
+        return false;  
+    }
+
+    @Override
+    public boolean eliminarEstudiante(int codigo) {
+        for (int i = 0; i < totalEstudiantes; i++){
+            if (estudiantes[i].getCodigo()== codigo){
+                for (int j = i; j< totalEstudiantes -1; j++){
+                    estudiantes[j] = estudiantes [j + 1];
                 }
-                estudiantes[totalEstudiantes - 1] = null;
-                totalEstudiantes--;
-                return true;
+                estudiantes [totalEstudiantes -1 ] = null;
+                totalEstudiantes--; 
+                return true; 
             }
         }
         return false;
     }
 
     @Override
-    public boolean actualizarEstudiante(int i, Estudiante estudiante) {
-        estudiantes[i] = estudiante;
-        return true;
+    public boolean actualizarEstudiante(int codigo, Estudiante estudiante) {
+         for (int i = 0; i < totalEstudiantes; i++){
+             estudiantes [i] = estudiante ; 
+             imprimirDatosE();
+             return true; 
+         }
+        return false;
     }
+    
+    
 
 }

@@ -4,6 +4,7 @@ public interface IEstudiantes {
 
     public boolean agregarEstudiantes(Estudiante estudiante);
     public void imprimirDatosE ();
-    public boolean eliminarEstudiante (String codigo);
-    public boolean actualizarEstudiante (int i, Estudiante estudiante);
+    public boolean buscarEstudiante (int codigo);
+    public boolean eliminarEstudiante (int codigo);
+    public boolean actualizarEstudiante (int codigo, Estudiante estudiante);
 }
