@@ -25,6 +25,7 @@ public class PersonasServicios implements IPersonasServicios {
         for (int i = 0; i < totalPersonalS; i++) {
             System.out.println("------Personas Servicio------" + "|" + (i + 1) + "|");
             System.out.println("Nombre: " + personalServicios[i].getNombre());
+            System.out.println("ID: "+ personalServicios[i].getId());
             System.out.println("Cedula: " + personalServicios[i].getCedula());
             System.out.println("Correo Personal: " + personalServicios[i].getCorreo());
             System.out.println("Correo Institucional: " + personalServicios[i].getCorreoInstitucional());
@@ -37,13 +38,16 @@ public class PersonasServicios implements IPersonasServicios {
     @Override
     public boolean actualizarPersonalServicio(int id, PersonalServicios personaServicios) {
         for (int i = 0; i < totalPersonalS; i++) {
-            personalServicios[i] = personaServicios;
-            imprimirDatos();
-            return true;
+            if (personalServicios[i].getId() == id) {
+                personalServicios[i] = personaServicios;
+                imprimirDatos();
+                return true;
+            }
         }
         return false;
     }
 
+    @Override
     public boolean eliminarPersonalServicio(int id) {
         for (int i = 0; i < totalPersonalS; i++) {
             if (personalServicios[i].getId() == id) {
@@ -58,12 +62,13 @@ public class PersonasServicios implements IPersonasServicios {
         return false;
     }
 
-    public boolean buscarPersonalServicio(int id) {
+    @Override
+    public PersonalServicios buscarPersonalServicio(int id) {
         for (int i = 0; i < totalPersonalS; i++) {
             if (personalServicios[i].getId() == id) {
-                return true;
+                return personalServicios[i];
             }
         }
-        return false;
+        return null;
     }
 }

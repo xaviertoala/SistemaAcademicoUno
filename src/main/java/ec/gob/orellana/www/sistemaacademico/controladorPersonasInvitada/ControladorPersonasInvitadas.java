@@ -39,9 +39,8 @@ public class ControladorPersonasInvitadas {
                     ||cedulaPersonasInvitadas.isEmpty()
                     ||personalPersonasInvitadas.isEmpty()
                     ||descripcionPersonasInvitadas.isEmpty()){
-                notificadorPersonasInvitadas.notificadorPersonasInvitadas("Erro: No se pudo agregar el Profesor. Datos vacios..");
+                notificadorPersonasInvitadas.notificadorPersonasInvitadas("Error: No se pudo agregar el Profesor. Datos vacios.");
                 return;
-                
             }
             PersonaInvitada xinvitada = new PersonaInvitada(nombrePersonasInvitadas,
                     idPersonasInvitadas,
@@ -53,22 +52,23 @@ public class ControladorPersonasInvitadas {
             if(true){
                 iPersonasInvitadas.imprimirDatos();
                 notificadorPersonasInvitadas.notificadorPersonasInvitadas("Persona Invitada Agregado");
+            } else {
+                notificadorPersonasInvitadas.notificadorPersonasInvitadas("Error: Persona invitada sin datos.");
             }
             
         } catch (Exception e) {
-            notificadorPersonasInvitadas.notificadorPersonasInvitadas("Error inesperado: " + e.getMessage());
+            notificadorPersonasInvitadas.notificadorPersonasInvitadas("Error: Persona invitada sin datos.");
         }
 }
     public void procesoBuscarPersonasInvitadas(){
         try {
             int idPersonasInvitadas = Integer.parseInt(vistaPersonasInvitadas.getBuscar());
-            boolean personasInvitadasBuscado = iPersonasInvitadas.buscarPersonasInvitadas(idPersonasInvitadas);
-            if (personasInvitadasBuscado == true){
-                 notificadorPersonasInvitadas.notificadorPersonasInvitadas("Persona Invitada encontrado");
+            PersonaInvitada personasInvitadasBuscado = iPersonasInvitadas.buscarPersonasInvitadas(idPersonasInvitadas);
+            if (personasInvitadasBuscado != null){
+                 notificadorPersonasInvitadas.notificadorPersonasInvitadas("Persona Invitada encontrada con exito");
             } else {
                  notificadorPersonasInvitadas.notificadorPersonasInvitadas("Personas Invitadas no encontrado");
             }
-           
         } catch (Exception e) {
             notificadorPersonasInvitadas.notificadorPersonasInvitadas("Personas Invitadas no encontrado");
         }
@@ -77,40 +77,41 @@ public class ControladorPersonasInvitadas {
     public void procesoControladorEliminarPersonasInvitadas(){
         try {
             int idPersonasInvitadas = Integer.parseInt(vistaPersonasInvitadas.getBuscar());
-            boolean personasInvitadasBuscado = iPersonasInvitadas.buscarPersonasInvitadas(idPersonasInvitadas);
-            if(personasInvitadasBuscado == true){
+            PersonaInvitada personasInvitadasBuscado = iPersonasInvitadas.buscarPersonasInvitadas(idPersonasInvitadas);
+            if(personasInvitadasBuscado != null){
                 iPersonasInvitadas.eliminarPersonasInvitadas(idPersonasInvitadas);
                 notificadorPersonasInvitadas.notificadorPersonasInvitadas("Personas Invitadas dado de Baja.");
                 iPersonasInvitadas.imprimirDatos();
             } else {
-                notificadorPersonasInvitadas.notificadorPersonasInvitadas("Error en Eliminar Personas Invitadas");
+                notificadorPersonasInvitadas.notificadorPersonasInvitadas("Personas Invitada no encontrada");
             }
         } catch (Exception e) {
-            notificadorPersonasInvitadas.notificadorPersonasInvitadas("Error en Eliminar Personas Invitadas");
+            notificadorPersonasInvitadas.notificadorPersonasInvitadas("Personas Invitada no encontrada");
         }
     }
     
     public void procesoControladorActualizarPersonasInvitadas(){
         try {
             int idPersonasInvitadas = Integer.parseInt(vistaPersonasInvitadas.getBuscar());
-            boolean actualizarPI = iPersonasInvitadas.buscarPersonasInvitadas(idPersonasInvitadas);
-            if (actualizarPI){
+            PersonaInvitada actualizarPI = iPersonasInvitadas.buscarPersonasInvitadas(idPersonasInvitadas);
+            if (actualizarPI != null){
             String nombrePersonasInvitadas = vistaPersonasInvitadas.getNombre();
             String cedulaPersonasInvitadas = vistaPersonasInvitadas.getCedula();
             String personalPersonasInvitadas = vistaPersonasInvitadas.getPersonal();
             String descripcionPersonasInvitadas = vistaPersonasInvitadas.getDescripcion(); 
+            int idPersonaInvitada = Integer.parseInt(vistaPersonasInvitadas.getId());
             
             PersonaInvitada personaInvitadaActualizada = new PersonaInvitada(nombrePersonasInvitadas,
-                    idPersonasInvitadas,
+                    idPersonaInvitada,
                     personalPersonasInvitadas,
                     cedulaPersonasInvitadas,
                     descripcionPersonasInvitadas);
             
-                    iPersonasInvitadas.actualizarPersonaInvitada(idPersonasInvitadas, personaInvitadaActualizada);
-                    notificadorPersonasInvitadas.notificadorPersonasInvitadas("Persona Invitada actualizado");
-                    iPersonasInvitadas.imprimirDatos();
+                    iPersonasInvitadas.actualizarPersonaInvitada(idPersonaInvitada, personaInvitadaActualizada);
+                    notificadorPersonasInvitadas.notificadorPersonasInvitadas("Persona Invitada actualizada.");
+                    //iPersonasInvitadas.imprimirDatos();
             } else{
-                notificadorPersonasInvitadas.notificadorPersonasInvitadas("No se encontro el ID del Persona Invitada"+idPersonasInvitadas);
+                notificadorPersonasInvitadas.notificadorPersonasInvitadas("No se encontro a Persona Invitada");
             }
           
         }  catch (Exception e) {

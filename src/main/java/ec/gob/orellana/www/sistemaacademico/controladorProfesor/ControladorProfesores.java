@@ -46,12 +46,12 @@ public class ControladorProfesores {
 
         try {
             String nombreProfesor = vistaProfesor.getNombre();
+            int idProfesor = Integer.parseInt(vistaProfesor.getId());
             String cedulaProfesor = vistaProfesor.getCedula();
             String institucionalProfesor = vistaProfesor.getInstitucional();
             String personalProfesor = vistaProfesor.getPersonal();
             String escalafonProfesor = vistaProfesor.getEscalafon();
             Escalafon tpEscalafon = identificarEscalafon(escalafonProfesor);
-            int idProfesor = Integer.parseInt(vistaProfesor.getId());
             String sueldoProfesor = vistaProfesor.getSueldo();
 
             if (nombreProfesor.isEmpty()
@@ -73,75 +73,72 @@ public class ControladorProfesores {
             boolean respuesta = iProfesores.agregarProfesor(xprofesor);
             if (true) {
                 iProfesores.imprimirDatos();
-                notificadorProfe.notificadorProfe("Profesor Agregado");
+                notificadorProfe.notificadorProfe("Profesor Agregado!");
+            } else {
+                notificadorProfe.notificadorProfe("Error: Profesor sin datos");
             }
         } catch (Exception e) {
-            notificadorProfe.notificadorProfe("Error inesperado: " + e.getMessage());
+            notificadorProfe.notificadorProfe("Error: Profesor sin datos");
         }
     }
-    
-    public void procesoBuscarProfesor(){
+
+    public void procesoBuscarProfesor() {
         try {
             int idProfesor = Integer.parseInt(vistaProfesor.getBuscar());
-            boolean profesorBuscado = iProfesores.buscarProfesor(idProfesor);
-            if (profesorBuscado == true){
-            
+            Profesor profesorBuscado = iProfesores.buscarProfesor(idProfesor);
+            if (profesorBuscado != null) {
+                notificadorProfe.notificadorProfe("Profesor encontrado con exito.");
+            } else {
+                notificadorProfe.notificadorProfe("Profesor no encontrado.");
             }
-            notificadorProfe.notificadorProfe("Profesor encontrado");
-            
         } catch (Exception e) {
             notificadorProfe.notificadorProfe("Profesor no encontrado");
         }
     }
-    
-    public void procesoControladorEliminarProfesor(){
+
+    public void procesoControladorEliminarProfesor() {
         try {
             int idProfesor = Integer.parseInt(vistaProfesor.getBuscar());
-            boolean profesorBuscado = iProfesores.buscarProfesor(idProfesor);
-            if(profesorBuscado == true){
+            Profesor profesorBuscado = iProfesores.buscarProfesor(idProfesor);
+            if (profesorBuscado != null) {
                 iProfesores.eliminarProfesor(idProfesor);
                 notificadorProfe.notificadorProfe("Profesor dado de Baja.");
                 iProfesores.imprimirDatos();
             } else {
-                notificadorProfe.notificadorProfe("Error en Eliminar Profesor");
+                notificadorProfe.notificadorProfe("Profesor no encontrado");
             }
         } catch (Exception e) {
-            notificadorProfe.notificadorProfe("Error en Eliminar Profesor");
+            notificadorProfe.notificadorProfe("Profesor no encontrado");
         }
     }
-    
-    public void procesoControladorActualizarProfesor(){
+
+    public void procesoControladorActualizarProfesor() {
         try {
             int idProfesor = Integer.parseInt(vistaProfesor.getBuscar());
-            boolean actualizarPI = iProfesores.buscarProfesor(idProfesor);
-            if (actualizarPI){
-            String nombreProfesor = vistaProfesor.getNombre();
-            String cedulaProfesor = vistaProfesor.getCedula();
-            String institucionalProfesor = vistaProfesor.getInstitucional();
-            String personalProfesor = vistaProfesor.getPersonal();
-            String escalafonProfesor = vistaProfesor.getEscalafon();
-            String sueldoProfesor = vistaProfesor.getSueldo();
-            Escalafon tpEscalafon = identificarEscalafon(escalafonProfesor);
-            
-            Profesor profesorActualizado = new Profesor(tpEscalafon,
-                    sueldoProfesor,
-                    institucionalProfesor,
-                    nombreProfesor,
-                    idProfesor,
-                    nombreProfesor,
-                    cedulaProfesor);
-            
-                    iProfesores.actualizarProfesor(idProfesor, profesorActualizado);
-                    notificadorProfe.notificadorProfe("Profesor actualizado");
-                    iProfesores.imprimirDatos();
-            }else{
-                notificadorProfe.notificadorProfe("No se encontro el ID del Profesor"+idProfesor);
+            Profesor actualizarPI = iProfesores.buscarProfesor(idProfesor);
+            if (actualizarPI != null) {
+                String nombreProfesor = vistaProfesor.getNombre();
+                String cedulaProfesor = vistaProfesor.getCedula();
+                String institucionalProfesor = vistaProfesor.getInstitucional();
+                String personalProfesor = vistaProfesor.getPersonal();
+                String sueldoProfesor = vistaProfesor.getSueldo();
+                String escalafonProfesor = vistaProfesor.getEscalafon();
+                Escalafon tpEscalafon = identificarEscalafon(escalafonProfesor);
+                int iDProfesor = Integer.parseInt(vistaProfesor.getId());
+                Profesor profesorActualizado = new Profesor(tpEscalafon, 
+                        sueldoProfesor, 
+                        institucionalProfesor, 
+                        nombreProfesor, 
+                        iDProfesor, 
+                        personalProfesor, 
+                        cedulaProfesor);
+                iProfesores.actualizarProfesor(iDProfesor, profesorActualizado);
+                notificadorProfe.notificadorProfe("Profesor actualizado");
+                //iProfesores.imprimirDatos();
+            } else {
+                notificadorProfe.notificadorProfe("No se encontro al profesor");
             }
-          
-        } catch (NumberFormatException ex) {
-            notificadorProfe.notificadorProfe("Sueldo o ID invalido. Verificar la información");
-        }  catch (Exception e) {
-            e.printStackTrace();
+        } catch (Exception e) {
             notificadorProfe.notificadorProfe("Error al actualizar Profesor");
         }
     }

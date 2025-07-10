@@ -1,8 +1,9 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
-
 package ec.gob.orellana.www.sistemaacademico;
+
+import ec.gob.orellana.www.sistemaacademico.VistaSistemaAcademico.VSistemaAcademico;
 import ec.gob.orellana.www.sistemaacademico.estudiantes.Estudiante;
 import ec.gob.orellana.www.sistemaacademico.personasservicios.PersonalServicios;
 import ec.gob.orellana.www.sistemaacademico.decanos.Decano;
@@ -29,21 +30,19 @@ import ec.gob.orellana.www.sistemaacademico.vistaProfesor.VProfesores;
 public class SistemaAcademico {
 
     public static void main(String[] args) {
-        
-      //  VEstudiantes x = new VEstudiantes();
-      //  x.setVisible(true);
-        
-        //VProfesores p = new VProfesores ();
-        //p.setVisible(true);
-        
-        VPersonasInvitadas i = new VPersonasInvitadas ();
-        i.setVisible(true);
-        
-        //VPersonasServicios s = new VPersonasServicios ();
-        //s.setVisible(true);
 
-        //VDecanos xx = new VDecanos ();
-        //xx.setVisible(true);
+        VSistemaAcademico sistemaPersona = new VSistemaAcademico ();
+        sistemaPersona.setVisible(true);
+        //
+
+        //
+        
+        //VPersonasInvitadas i = new VPersonasInvitadas ();
+        //  i.setVisible(true);
+        
+        //
+        
+        //
 
         /*
         //CLASE PERSONA INVITADA
@@ -135,6 +134,6 @@ public class SistemaAcademico {
         Decano EliminarD = new Decano (" ", 0, " ", " ", 0, " ", " ");
         objDecano.eliminarDecano(1, EliminarD);
         objDecano.imprimirDatos(); 
-*/
+         */
     }
 }

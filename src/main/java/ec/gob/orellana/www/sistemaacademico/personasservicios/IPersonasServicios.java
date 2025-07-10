@@ -6,6 +6,6 @@ public interface IPersonasServicios {
     public void imprimirDatos();
     public boolean actualizarPersonalServicio(int i, PersonalServicios personalServicios);
     public boolean eliminarPersonalServicio(int id);
-    public boolean buscarPersonalServicio(int id);
+    public PersonalServicios buscarPersonalServicio(int id);
 
 }

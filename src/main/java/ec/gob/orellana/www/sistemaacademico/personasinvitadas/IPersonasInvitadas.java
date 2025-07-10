@@ -7,6 +7,6 @@ public interface IPersonasInvitadas {
     public void imprimirDatos ();
     public boolean actualizarPersonaInvitada (int i, PersonaInvitada persoonaInvitada );
     public boolean eliminarPersonasInvitadas(int id);
-    public boolean buscarPersonasInvitadas(int id);
+    public PersonaInvitada buscarPersonasInvitadas(int id);
     
 }

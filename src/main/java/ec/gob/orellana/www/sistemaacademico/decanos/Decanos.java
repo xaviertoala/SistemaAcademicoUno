@@ -31,7 +31,7 @@ public class Decanos implements IDecanos {
         for (int i = 0; i < totalDecanos; i++) {
             System.out.println("------DECANO------" + "|" + (i + 1) + "|");
             System.out.println("Nombre: " + decanos[i].getNombre());
-            System.out.println("Id: "+ decanos[i].getId());
+            System.out.println("Id: " + decanos[i].getId());
             System.out.println("Nivel Jerarquico: " + decanos[i].getNivelJerarquico());
             System.out.println("Cedula: " + decanos[i].getCedula());
             System.out.println("Correo Personal: " + decanos[i].getCorreo());
@@ -41,6 +41,7 @@ public class Decanos implements IDecanos {
         }
     }
 
+    @Override
     public boolean eliminarDecano(int id) {
         for (int i = 0; i < totalDecanos; i++) {
             if (decanos[i].getId() == id) {
@@ -58,20 +59,23 @@ public class Decanos implements IDecanos {
     @Override
     public boolean actualizarDecano(int id, Decano decano) {
         for (int i = 0; i < totalDecanos; i++) {
-            decanos[i] = decano;
-            imprimirDatos();
-            return true;
-        }
-        return false; 
-    }
-    
-    public boolean buscarDecano (int id){
-        for (int i = 0; i < totalDecanos; i++){
-            if(decanos[i].getId() == id){
-                return true; 
+            if (decanos[i].getId() == id) {
+                decanos[i] = decano;
+                imprimirDatos();
+                return true;
             }
         }
-        return false; 
+        return false;
+    }
+
+    @Override
+    public Decano buscarDecano(int id) {
+        for (int i = 0; i < totalDecanos; i++) {
+            if (decanos[i].getId() == id) {
+                return decanos[i];
+            }
+        }
+        return null;
     }
 
 }

@@ -44,23 +44,21 @@ public class ControladorEstudiantes {
                 iEstudiantes.imprimirDatosE();
                 notificadorMSM.notificadorMSM("Estudiante Agregado!");
             } else {
-                notificadorMSM.notificadorMSM("No agregaste nd!");
+                notificadorMSM.notificadorMSM("Error: Estudiante sin datos");
             }
-
         } catch (Exception e) {
-            notificadorMSM.notificadorMSM("Error inesperado:  " + e.getMessage());
-
+            notificadorMSM.notificadorMSM("Error: Estudiante sin datos");
         }
     }
 
     public void procesoBuscarEstudiante() {
         try {
-            int codigoEstudiante = Integer.parseInt(vistaEstudiantes.getBuscarEstudianteCodigo());
-            boolean estudianteBuscado = iEstudiantes.buscarEstudiante(codigoEstudiante);
-            if (estudianteBuscado == true) {
-                notificadorMSM.notificadorMSM("Estudiante buscado");
+            int codigoEstudianteBuscado = Integer.parseInt(vistaEstudiantes.getBuscarEstudianteCodigo());
+            Estudiante estudianteBuscado = iEstudiantes.buscarEstudiante(codigoEstudianteBuscado);
+            if (estudianteBuscado != null) {
+                notificadorMSM.notificadorMSM("Estudiante encontrado con exito.");
             } else {
-                notificadorMSM.notificadorMSM("Estudiante no encontrado");
+                notificadorMSM.notificadorMSM("Estudiante no encontrado.");
             }
         } catch (Exception e) {
             notificadorMSM.notificadorMSM("Estudiante no encontrado");
@@ -70,14 +68,15 @@ public class ControladorEstudiantes {
 
     public void procesoEliminarE() {
         try {
-            int codigoEstudiante = Integer.parseInt(vistaEstudiantes.getBuscarEstudianteCodigo());
-            boolean estudianteBuscado = iEstudiantes.buscarEstudiante(codigoEstudiante);
-            if (estudianteBuscado) {
-                iEstudiantes.eliminarEstudiante(codigoEstudiante);
+            int codigoEstudianteBuscado = Integer.parseInt(vistaEstudiantes.getBuscarEstudianteCodigo());
+            Estudiante estudianteBuscado = iEstudiantes.buscarEstudiante(codigoEstudianteBuscado);
+            if (estudianteBuscado != null) {
+                iEstudiantes.eliminarEstudiante(codigoEstudianteBuscado);
                 notificadorMSM.notificadorMSM("Estudiante dado de baja");
                 iEstudiantes.imprimirDatosE();
+            } else {
+                notificadorMSM.notificadorMSM("Estudiante no encontrado");
             }
-
         } catch (Exception e) {
             notificadorMSM.notificadorMSM("Estudiante no encontrado");
         }
@@ -85,11 +84,12 @@ public class ControladorEstudiantes {
 
     public void procesoActualizarE() {
         try {
-            int codigoEstudiante = Integer.parseInt(vistaEstudiantes.getBuscarEstudianteCodigo());
-            boolean actualizar = iEstudiantes.buscarEstudiante(codigoEstudiante);
-            if (actualizar) {
+            //int codigoEstudiante = Integer.parseInt(vistaEstudiantes.getCodigoEstudiante());
+            int codigoEstudianteBuscado = Integer.parseInt(vistaEstudiantes.getBuscarEstudianteCodigo());
+            Estudiante actualizar = iEstudiantes.buscarEstudiante(codigoEstudianteBuscado);
+            if (actualizar != null) {
                 String nombreEstudiante = vistaEstudiantes.getNombreEstudiante();
-                //int codigoEstudiante = Integer.parseInt(vistaEstudiantes.getCodigoEstudiante());
+                int codigoEstudiante = Integer.parseInt(vistaEstudiantes.getCodigoEstudiante());
                 String correoInstitucionalEstudiante = vistaEstudiantes.getCorreoInstitucionalEstudiante();
                 String correoPersonalEstudiante = vistaEstudiantes.getCorreoPersonalEstudiante();
                 String cedulaEstudiante = vistaEstudiantes.getCedula();
@@ -97,15 +97,14 @@ public class ControladorEstudiantes {
                 Estudiante estudianteActualizado = new Estudiante(codigoEstudiante,
                         correoInstitucionalEstudiante,
                         nombreEstudiante,
-                        codigoEstudiante,
+                        0,
                         nombreEstudiante,
                         cedulaEstudiante);
                 iEstudiantes.actualizarEstudiante(codigoEstudiante, estudianteActualizado);
                 notificadorMSM.notificadorMSM("Estudiante Actualizado.");
-                iEstudiantes.imprimirDatosE();
-
+                //iEstudiantes.imprimirDatosE();
             } else {
-                notificadorMSM.notificadorMSM("No se encontro estudiante con codigo: " + codigoEstudiante);
+                notificadorMSM.notificadorMSM("No se encontro al estudiante");
             }
 
         } catch (Exception e) {

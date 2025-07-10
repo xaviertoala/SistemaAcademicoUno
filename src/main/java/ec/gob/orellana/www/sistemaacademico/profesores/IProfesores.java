@@ -13,5 +13,5 @@ public interface IProfesores {
     public void imprimirDatos();
     public boolean eliminarProfesor(int id);
     public boolean actualizarProfesor(int id, Profesor proofesores);
-    public boolean buscarProfesor(int id);
+    public Profesor buscarProfesor(int id);
 }

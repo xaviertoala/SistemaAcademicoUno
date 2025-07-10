@@ -53,13 +53,13 @@ public class ControladorDecanos {
             notificadorDecano.notificadorDecano("Error inesperado:  " + e.getMessage());
         }
     }
-<<<<<<< HEAD
+
 
     public void procesoBuscarD() {
         try {
             int idDecano = Integer.parseInt(vistaDecanos.getBuscar());
-            boolean decanoBuscado = iDecanos.buscarDecano(idDecano);
-            if (decanoBuscado == true) {
+            Decano decanoBuscado = iDecanos.buscarDecano(idDecano);
+            if (decanoBuscado != null) {
                 notificadorDecano.notificadorDecano("Decano encontrado.");
             } else {
                 notificadorDecano.notificadorDecano("Decano no encontrado");
@@ -72,53 +72,47 @@ public class ControladorDecanos {
     public void procesoEliminarD() {
         try {
             int idDecano = Integer.parseInt(vistaDecanos.getBuscar());
-            boolean decanoBuscado = iDecanos.buscarDecano(idDecano);
-            if (decanoBuscado == true) {
+            Decano decanoBuscado = iDecanos.buscarDecano(idDecano);
+            if (decanoBuscado != null) {
                 iDecanos.eliminarDecano(idDecano);
-                notificadorDecano.notificadorDecano("Decano eliminado");
+                notificadorDecano.notificadorDecano("Decano dado de baja.");
                 iDecanos.imprimirDatos();
+            } else {
+                notificadorDecano.notificadorDecano("Decano no encontrado.");
             }
-
         } catch (Exception e) {
-            notificadorDecano.notificadorDecano("Error al eliminar Decano.");
+            notificadorDecano.notificadorDecano("Decano no encontrado.");
         }
     }
 
     public void procesoActualizarD() {
         try {
             int idDecano = Integer.parseInt(vistaDecanos.getBuscar());
-            boolean actualizar = iDecanos.buscarDecano(idDecano);
-            if (actualizar) {
+            Decano actualizar = iDecanos.buscarDecano(idDecano);
+            if (actualizar != null) {
                 String nombreEstudiante = vistaDecanos.getNombre();
                 String nivelJerarquico = vistaDecanos.getJerarquico();
                 String cedulaDecano = vistaDecanos.getCedula();
                 String correoInstitucional = vistaDecanos.getInstitucional();
                 String correoPersonal = vistaDecanos.getPersonal();
                 String sueldoDecano = vistaDecanos.getSueldo();
-                //int idDecano = Integer.parseInt(vistaDecanos.getId());
+                int iDDecano = Integer.parseInt(vistaDecanos.getId());
                 Decano decanoActualizado = new Decano (nivelJerarquico,
                         sueldoDecano,
                         correoInstitucional,
                         nombreEstudiante,
-                        idDecano,
+                        iDDecano,
                         correoPersonal,
                         cedulaDecano);
-                iDecanos.actualizarDecano(idDecano, decanoActualizado);
+                iDecanos.actualizarDecano(iDDecano, decanoActualizado);
                 notificadorDecano.notificadorDecano("Decano actualizado.");
-                iDecanos.imprimirDatos();
+                //iDecanos.imprimirDatos();
             } else {
-                notificadorDecano.notificadorDecano("No se encontro Decano con id: "+ idDecano);
+                notificadorDecano.notificadorDecano("No se encontro al Decano ");
             }
         } catch (Exception e) {
             notificadorDecano.notificadorDecano("Error al actualizar decano.");
         }
 
     }
-=======
-    
-    
-    
-    
-    
->>>>>>> 6a4651338b0c86f13369bb9cd20ecb77bfdf20ed
 }

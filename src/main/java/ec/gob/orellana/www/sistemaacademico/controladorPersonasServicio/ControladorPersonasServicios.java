@@ -60,20 +60,19 @@ public class ControladorPersonasServicios {
                 notificadorPersonasServicios.notificadorPersonasServicios("Persona Servicio Agregado");
             }
         } catch (Exception e) {
-            notificadorPersonasServicios.notificadorPersonasServicios("Error inesperado: " + e.getMessage());
+            notificadorPersonasServicios.notificadorPersonasServicios("Error Persona de servicio sin datos. ");
         }
     }
 
     public void procesoBuscarPS() {
         try {
             int idPersonasServicios = Integer.parseInt(vistaPersonasServicios.getBuscar());
-            boolean personaServicioBuscada = iPersonasServicios.buscarPersonalServicio(idPersonasServicios);
-            if (personaServicioBuscada == true) {
-                notificadorPersonasServicios.notificadorPersonasServicios("Persona de servicios encontrada.");
+            PersonalServicios personaServicioBuscada = iPersonasServicios.buscarPersonalServicio(idPersonasServicios);
+            if (personaServicioBuscada != null) {
+                notificadorPersonasServicios.notificadorPersonasServicios("Persona de servicios encontrada con exito.");
             } else {
                 notificadorPersonasServicios.notificadorPersonasServicios("Persona de servicios no encontrada.  ");
             }
-
         } catch (Exception e) {
             notificadorPersonasServicios.notificadorPersonasServicios("Persona de servicios no encontrada. ");
         }
@@ -82,41 +81,44 @@ public class ControladorPersonasServicios {
     public void procesoEliminarPS() {
         try {
             int idPersonasServicios = Integer.parseInt(vistaPersonasServicios.getBuscar());
-            boolean personaServicioBuscada = iPersonasServicios.buscarPersonalServicio(idPersonasServicios);
-            if (personaServicioBuscada == true) {
+            PersonalServicios personaServicioBuscada = iPersonasServicios.buscarPersonalServicio(idPersonasServicios);
+            if (personaServicioBuscada != null) {
                 iPersonasServicios.eliminarPersonalServicio(idPersonasServicios);
-                notificadorPersonasServicios.notificadorPersonasServicios("Persona de servicios eliminada.");
+                notificadorPersonasServicios.notificadorPersonasServicios("Persona de servicios dado de baja.");
                 iPersonasServicios.imprimirDatos();
+            } else {
+                notificadorPersonasServicios.notificadorPersonasServicios("Persona de servicios no encontrada.");
             }
         } catch (Exception e) {
-            notificadorPersonasServicios.notificadorPersonasServicios("Error al eliminar la persona de servicios");
+            notificadorPersonasServicios.notificadorPersonasServicios("Persona de servicios no encontrada.");
         }
     }
 
     public void procesoActualizarPS() {
         try {
             int idPersonasServicios = Integer.parseInt(vistaPersonasServicios.getBuscar());
-            boolean actualizarPS = iPersonasServicios.buscarPersonalServicio(idPersonasServicios);
-            if (actualizarPS) {
+            PersonalServicios actualizarPS = iPersonasServicios.buscarPersonalServicio(idPersonasServicios);
+            if (actualizarPS != null) {
                 String nombrePersonasServicios = vistaPersonasServicios.getNombre();
                 String cedulaPersonasServicios = vistaPersonasServicios.getCedula();
                 String personalPersonasServicios = vistaPersonasServicios.getPersonal();
                 String institucionalPersonasServicios = vistaPersonasServicios.getInstitucional();
                 String sueldoPersonasServicios = vistaPersonasServicios.getSueldo();
                 String gremioPersonasServicios = vistaPersonasServicios.getGremio();
-                //int idPersonasServicios = Integer.parseInt(vistaPersonasServicios.getID());
+                int idPersonaServicio = Integer.parseInt(vistaPersonasServicios.getID());
                 
                 PersonalServicios personalSActualizado = new PersonalServicios(gremioPersonasServicios,
                         sueldoPersonasServicios,
-                        cedulaPersonasServicios,
+                        institucionalPersonasServicios,
+                        nombrePersonasServicios,
+                        idPersonaServicio,
                         personalPersonasServicios,
-                        idPersonasServicios,
-                        sueldoPersonasServicios,
-                        institucionalPersonasServicios);
-                iPersonasServicios.actualizarPersonalServicio(idPersonasServicios, personalSActualizado);
-                notificadorPersonasServicios.notificadorPersonasServicios("Personal de servicio actualizado.");
+                        cedulaPersonasServicios);
+                iPersonasServicios.actualizarPersonalServicio(idPersonaServicio, personalSActualizado);
+                notificadorPersonasServicios.notificadorPersonasServicios("Personal de servicio Actualizado.");
+                //iPersonasServicios.imprimirDatos();
             } else {
-                notificadorPersonasServicios.notificadorPersonasServicios("No se encontro persona de servicio con id: "+ idPersonasServicios);
+                notificadorPersonasServicios.notificadorPersonasServicios("No se encontro persona de servicio. ");
             }
         } catch (Exception e) {
             notificadorPersonasServicios.notificadorPersonasServicios("Error al actualizar personal de servicio. ");

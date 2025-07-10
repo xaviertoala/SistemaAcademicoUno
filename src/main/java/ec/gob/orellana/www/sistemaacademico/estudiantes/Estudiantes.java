@@ -29,31 +29,32 @@ public class Estudiantes implements IEstudiantes {
             System.out.println("Codigo: " + estudiantes[i].getCodigo());
             System.out.println("Correo Institucional: " + estudiantes[i].getCorreoInstitucional());
             System.out.println("Cedula: " + estudiantes[i].getCedula());
-            System.out.println("CorreoPersonal: " + estudiantes[i].getCorreo());
+            System.out.println("Correo Personal: " + estudiantes[i].getCorreo());
             System.out.println(" ");
 
         }
     }
 
-    public boolean buscarEstudiante(int codigo) {
-         for (int i = 0; i < totalEstudiantes; i++) {
+    @Override
+    public Estudiante buscarEstudiante(int codigo) {
+        for (int i = 0; i < totalEstudiantes; i++) {
             if (estudiantes[i].getCodigo() == codigo) {
-             return true; 
+                return estudiantes[i];
             }
-         }
-        return false;  
+        }
+        return null;
     }
 
     @Override
     public boolean eliminarEstudiante(int codigo) {
-        for (int i = 0; i < totalEstudiantes; i++){
-            if (estudiantes[i].getCodigo()== codigo){
-                for (int j = i; j< totalEstudiantes -1; j++){
-                    estudiantes[j] = estudiantes [j + 1];
+        for (int i = 0; i < totalEstudiantes; i++) {
+            if (estudiantes[i].getCodigo() == codigo) {
+                for (int j = i; j < totalEstudiantes - 1; j++) {
+                    estudiantes[j] = estudiantes[j + 1];
                 }
-                estudiantes [totalEstudiantes -1 ] = null;
-                totalEstudiantes--; 
-                return true; 
+                estudiantes[totalEstudiantes - 1] = null;
+                totalEstudiantes--;
+                return true;
             }
         }
         return false;
@@ -61,14 +62,14 @@ public class Estudiantes implements IEstudiantes {
 
     @Override
     public boolean actualizarEstudiante(int codigo, Estudiante estudiante) {
-         for (int i = 0; i < totalEstudiantes; i++){
-             estudiantes [i] = estudiante ; 
-             imprimirDatosE();
-             return true; 
-         }
+        for (int i = 0; i < totalEstudiantes; i++) {
+            if (estudiantes[i].getCodigo() == codigo) {
+                estudiantes[i] = estudiante;
+                imprimirDatosE();
+                return true;
+            }
+        }
         return false;
-    }
-    
-    
 
+    }
 }
