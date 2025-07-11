@@ -139,12 +139,14 @@ public class VPersonalAcademico extends javax.swing.JFrame {
         // TODO add your handling code here:
         VDecanos xx = new VDecanos ();
         xx.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnDecanoActionPerformed
 
     private void btnProfesorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfesorActionPerformed
         // TODO add your handling code here:
         VProfesores p = new VProfesores ();
         p.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnProfesorActionPerformed
 
     /**

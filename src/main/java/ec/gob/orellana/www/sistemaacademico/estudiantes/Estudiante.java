@@ -1,7 +1,7 @@
 
 package ec.gob.orellana.www.sistemaacademico.estudiantes;
 
-import ec.gob.orellana.www.sistemaacademico.clases.PersonaInstitucional;
+import ec.gob.orellana.www.sistemaacademico.aPersonalInstitucional.PersonaInstitucional;
 
 
 public class Estudiante extends PersonaInstitucional{

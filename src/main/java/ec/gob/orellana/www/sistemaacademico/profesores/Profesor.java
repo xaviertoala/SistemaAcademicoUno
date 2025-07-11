@@ -1,7 +1,7 @@
 
 package ec.gob.orellana.www.sistemaacademico.profesores;
 
-import ec.gob.orellana.www.sistemaacademico.clases.PersonalAcademico;
+import ec.gob.orellana.www.sistemaacademico.aPersonalAcademico.PersonalAcademico;
 
 
 public class Profesor extends PersonalAcademico{
